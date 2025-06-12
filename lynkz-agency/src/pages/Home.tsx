@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FiArrowRight, FiCode, FiLayers, FiSearch } from 'react-icons/fi';
 import PortfolioSection from '../components/portfolio/PortfolioSection';
+import CaseStudySection from '../components/case-studies/CaseStudySection';
 import styles from './Home.module.css';
 
 // Mock data
@@ -314,22 +315,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Case Study / Blog Section */}
-      <section className={styles.blogNews}>
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <span className={styles.sectionSubtitle}>Learn With Us</span>
-            <h2 className={styles.sectionTitle}>Case Study & Tips</h2>
-          </div>
-          <div className={styles.blogCards}>
-            <div className={styles.blogCard}>
-              <h4>How to Conduct a Digital Marketing Audit</h4>
-              <p>Step-by-step guide on auditing your online presence to unlock growth potential.</p>
-              <Link to="/blog/digital-marketing-audit" className={styles.secondaryButton}>Read More</Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Case Studies Section */}
+      <CaseStudySection />
 
       {/* CTA Section */}
       <section className={styles.cta}>
