@@ -1,0 +1,394 @@
+/* Portfolio Page */
+.portfolioPage {
+  padding: 2rem 0;
+  color: var(--text-color);
+}
+
+/* Hero Section */
+.hero {
+  padding: 8rem 0 4rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+/* Filters */
+.filtersContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.filterButton {
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-color);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filterButton:hover,
+.filterButton.active {
+  background: var(--gradient-primary);
+  color: white;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Projects Grid */
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.projectCard {
+  background: var(--bg-secondary);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.projectImage {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.projectContent {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.projectCategory {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--gradient-primary);
+  color: white;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  align-self: flex-start;
+}
+
+.projectDescription {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.projectLink {
+  display: inline-flex;
+  align-items: center;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-top: auto;
+  transition: color 0.3s ease;
+}
+
+.projectLink:hover {
+  color: var(--primary-hover);
+}
+
+.projectLink svg {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.projectLink:hover svg {
+  transform: translateX(4px);
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 2rem;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.modalContent {
+  background: var(--bg-primary);
+  border-radius: 1rem;
+  max-width: 1000px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(20px);
+  animation: slideUp 0.3s ease forwards;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: var(--bg-secondary);
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.closeButton:hover {
+  background: var(--bg-tertiary);
+  transform: rotate(90deg);
+}
+
+.modalBody {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.modalImage {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  object-fit: cover;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.modalDetails {
+  padding: 3rem 2rem 3rem 0;
+}
+
+.modalTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.modalDescription {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem;
+  color: var(--text-primary);
+}
+
+.resultsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.resultItem {
+  background: var(--bg-secondary);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.resultValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+}
+
+.resultLabel {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.resultDescription {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+.modalLinks {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.modalLink {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.primaryLink {
+  background: var(--gradient-primary);
+  color: white;
+}
+
+.primaryLink:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.secondaryLink {
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.secondaryLink:hover {
+  background: var(--bg-secondary);
+}
+
+.modalLink svg {
+  margin-right: 0.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .modalBody {
+    grid-template-columns: 1fr;
+  }
+  
+  .modalImage {
+    border-radius: 0.5rem 0.5rem 0 0;
+    max-height: 300px;
+    min-height: auto;
+  }
+  
+  .modalDetails {
+    padding: 2rem;
+  }
+  
+  .resultsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+  
+  .projectsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .resultsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 6rem 0 3rem;
+  }
+  
+  .heroTitle {
+    font-size: 2rem;
+  }
+  
+  .filterButton {
+    padding: 0.4rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .projectsGrid {
+    gap: 1.5rem;
+  }
+  
+  .modalLinks {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .modalLink {
+    justify-content: center;
+  }
+}
