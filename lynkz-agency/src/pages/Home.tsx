@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FiArrowRight, FiCode, FiLayers, FiSearch } from 'react-icons/fi';
+import PortfolioSection from '../components/portfolio/PortfolioSection';
 import styles from './Home.module.css';
 
 // Mock data
@@ -225,31 +226,40 @@ const Home = () => {
         </section>
 
 
-      {/* Our Latest Works Section */}
-      <section className={styles.latestWorks}>
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <span className={styles.sectionSubtitle}>Our Portfolio</span>
-            <h2 className={styles.sectionTitle}>Latest Works</h2>
-          </div>
-          <div className={styles.worksGrid}>
-            {/* Add your works here */}
-            <div className={styles.workCard}>Project A</div>
-            <div className={styles.workCard}>Project B</div>
-            <div className={styles.workCard}>Project C</div>
-          </div>
-        </div>
-      </section>
+      {/* Portfolio Section */}
+      <PortfolioSection />
 
       {/* Client Logo Swiper */}
       <section className={styles.clientsSwiper}>
         <div className="container">
-          <h3 className={styles.sectionSubtitle}>Our Clients</h3>
+          <h3 className={styles.sectionSubtitle}>Trusted by Industry Leaders</h3>
           <div className={styles.logoTrack}>
-            <div className={styles.logoSlide}>Client 1</div>
-            <div className={styles.logoSlide}>Client 2</div>
-            <div className={styles.logoSlide}>Client 3</div>
-            <div className={styles.logoSlide}>Client 4</div>
+            {[
+              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg',
+              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg',
+              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazon/amazon-original.svg',
+              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg',
+              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spotify/spotify-original.svg',
+              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg',
+              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/airbnb/airbnb-original.svg',
+              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netflix/netflix-original.svg',
+              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/uber/uber-plain.svg',
+              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg',
+              // Duplicate the logos to create a seamless loop
+              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg',
+              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg',
+              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazon/amazon-original.svg',
+              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg',
+              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spotify/spotify-original.svg',
+            ].map((logo, index) => (
+              <div key={index} className={styles.logoSlide}>
+                <img 
+                  src={logo} 
+                  alt={`Client Logo ${index + 1}`} 
+                  loading="lazy"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
