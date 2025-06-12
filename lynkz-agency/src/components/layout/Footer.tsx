@@ -27,26 +27,7 @@ const socialLinks = [
     url: 'https://www.facebook.com/lynkz.agency',
     icon: <FiFacebook className="social-icon" size={20} aria-hidden="true" />,
   },
-  {
-    name: 'YouTube',
-    url: 'https://www.youtube.com/@lynkz.agency',
-    icon: <FiYoutube className="social-icon" size={20} aria-hidden="true" />,
-  },
-  {
-    name: 'Dribbble',
-    url: 'https://dribbble.com/lynkz',
-    icon: <FiDribbble className="social-icon" size={20} aria-hidden="true" />,
-  },
-  {
-    name: 'Behance',
-    url: 'https://www.behance.net/lynkz',
-    icon: <FaBehance className="social-icon" size={20} aria-hidden="true" />,
-  },
-  {
-    name: 'GitHub',
-    url: 'https://github.com/lynkz-agency',
-    icon: <FiGithub className="social-icon" size={20} aria-hidden="true" />,
-  }
+
 ];
 
 // Navigation links

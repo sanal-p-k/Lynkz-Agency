@@ -5,6 +5,7 @@ import { FiArrowRight, FiCode, FiLayers, FiSearch } from 'react-icons/fi';
 import PortfolioSection from '../components/portfolio/PortfolioSection';
 import CaseStudySection from '../components/case-studies/CaseStudySection';
 import styles from './Home.module.css';
+import { VscGraph } from "react-icons/vsc";
 
 // Mock data
 const services = [
@@ -16,7 +17,7 @@ const services = [
   },
   {
     id: 2,
-    title: 'Web Development',
+    title: 'Web & App Development',
     description: 'Crafting seamless digital experiences with high-performance websites.',
     icon: <FiCode size={32} />,
   },
@@ -36,8 +37,15 @@ const services = [
     id: 5,
     title: 'Data Analytics',
     description: 'Turn your business data into actionable insights and decisions.',
-    icon: <FiCode size={32} />,
+    icon: <VscGraph  size={32} />,
   },
+    {
+    id: 6,
+    title: 'AI Powered Marketing',
+    description: 'Harness AI to create, optimize, and scale your marketing like never before.',
+    icon: <VscGraph  size={32} />,
+  },
+  
 ];
 
 const testimonials = [

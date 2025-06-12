@@ -89,9 +89,9 @@ const Header: React.FC = () => {
 
     >
       <div className={styles.container}>
-        <div className={styles.navbar}>
-          <Link to="/" className={styles.logo} onClick={closeMenu}>
-            Lynkz<span className={styles.logoDot}>.</span>
+        <div className={styles.navbar} >
+          <Link to="/" className={styles.logo} onClick={closeMenu} style={{width:'40%'}}>
+            <img src="/logo.png" width={'20%'} alt="" />
           </Link>
 
           {/* Desktop Navigation */}
