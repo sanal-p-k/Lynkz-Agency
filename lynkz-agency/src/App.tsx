@@ -10,6 +10,8 @@ import About from './pages/About.tsx';
 import Services from './pages/services.tsx'; // Using lowercase filename for consistency
 import Portfolio from './pages/Portfolio.tsx';
 import Contact from './pages/Contact.tsx';
+import CaseStudies from './pages/CaseStudies';
+import CaseStudyDetail from './pages/CaseStudyDetail';
 import './styles/global.css';
 
 // Scroll to top on route change
@@ -35,6 +37,8 @@ const AppContent = () => {
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </AnimatePresence>
