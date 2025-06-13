@@ -1,75 +1,38 @@
 import { motion, useInView } from 'framer-motion';
-import { FiUsers, FiAward, FiGlobe, FiTwitter, FiLinkedin, FiGithub, FiDribbble, FiInstagram } from 'react-icons/fi';
+import { FiUsers, FiAward, FiGlobe, FiZap, FiHeart, FiTrendingUp } from 'react-icons/fi';
 import styles from './About.module.css';
 import { useRef } from 'react';
-
-// Mock data
-const teamMembers = [
-  {
-    id: 1,
-    name: 'Alex Johnson',
-    role: 'Founder & CEO',
-    bio: 'Digital strategist with over 10 years of experience in building successful online businesses.',
-    image: 'team-1.jpg',
-    social: {
-      twitter: '#',
-      linkedin: '#',
-      dribbble: '#',
-    },
-  },
-  {
-    id: 2,
-    name: 'Sarah Williams',
-    role: 'Creative Director',
-    bio: 'Award-winning designer with a passion for creating beautiful and functional digital experiences.',
-    image: 'team-2.jpg',
-    social: {
-      twitter: '#',
-      linkedin: '#',
-      behance: '#',
-    },
-  },
-  {
-    id: 3,
-    name: 'Michael Chen',
-    role: 'Lead Developer',
-    bio: 'Full-stack developer specializing in modern web technologies and performance optimization.',
-    image: 'team-3.jpg',
-    social: {
-      twitter: '#',
-      github: '#',
-      linkedin: '#',
-    },
-  },
-  {
-    id: 4,
-    name: 'Emily Rodriguez',
-    role: 'Marketing Director',
-    bio: 'Data-driven marketer with expertise in growth strategies and brand development.',
-    image: 'team-4.jpg',
-    social: {
-      twitter: '#',
-      linkedin: '#',
-      instagram: '#',
-    },
-  },
-];
 
 const values = [
   {
     icon: <FiUsers />,
-    title: 'Collaboration',
-    description: 'We believe in working closely with our clients as partners to achieve shared success.'
+    title: 'Client-First Mindset',
+    description: 'Your success is our success. We dive deep into your business to deliver solutions that drive real impact and ROI.'
   },
   {
     icon: <FiAward />,
-    title: 'Excellence',
-    description: 'We strive for excellence in everything we do, delivering exceptional quality and results.'
+    title: 'Bold Creativity',
+    description: 'We don\'t just follow trends—we set them. Expect innovative solutions that make your brand stand out.'
   },
   {
     icon: <FiGlobe />,
-    title: 'Innovation',
-    description: 'We embrace creativity and forward-thinking to solve complex challenges in new ways.'
+    title: 'Agile & Adaptable',
+    description: 'In a fast-moving digital world, we pivot quickly to keep your business ahead of the curve.'
+  },
+  {
+    icon: <FiZap />,
+    title: 'Transparent & Accountable',
+    description: 'No hidden agendas or surprises. We maintain open communication and take ownership of our work.'
+  },
+  {
+    icon: <FiHeart />,
+    title: 'Passion-Driven',
+    description: 'We love what we do, and it shows in every project we touch. Your vision becomes our mission.'
+  },
+  {
+    icon: <FiTrendingUp />,
+    title: 'Results-Oriented',
+    description: 'We measure our success by your success. Every strategy we craft and every line of code we write is focused on delivering measurable growth.'
   }
 ];
 
@@ -83,29 +46,22 @@ const About = () => {
   const teamRef = useRef(null);
   const isTeamInView = useInView(teamRef, { once: true, amount: 0.1 });
 
-  // Social icon mapping
-  const socialIcons = {
-    twitter: <FiTwitter />,
-    linkedin: <FiLinkedin />,
-    github: <FiGithub />,
-    dribbble: <FiDribbble />,
-    behance: <FiDribbble />, // Using Dribbble icon for Behance as well
-    instagram: <FiInstagram />
-  };
+
 
   return (
     <div className={styles.about}>
       {/* Hero Section */}
       <section className={styles.heroSection} ref={heroRef}>
-        <motion.div 
-          className={styles.heroContent}
-          initial={{ opacity: 0, y: 20 }}
-          animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-        >
-          <h1 className={styles.heroTitle}>Our Story</h1>
-          <p className={styles.heroSubtitle}>Crafting digital experiences that make an impact</p>
-        </motion.div>
+        <div className="container">
+          <motion.div 
+            className={styles.heroContent}
+            initial={{ opacity: 0, x: -20 }}
+            animate={isHeroInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className={styles.heroTitle}>Our Story</h1>
+          </motion.div>
+        </div>
       </section>
 
       {/* About Intro */}
@@ -131,12 +87,15 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <h2>Who We Are</h2>
-              <p>
-                We are a passionate team of designers, developers, and strategists dedicated to creating exceptional digital experiences. With years of combined experience, we help businesses of all sizes bring their ideas to life through innovative technology and creative solutions.
-              </p>
-              <p>
-                Our approach combines strategic thinking with technical excellence to deliver solutions that not only look great but also drive real business results. We believe in building long-term partnerships with our clients, working collaboratively to achieve their goals.
-              </p>
+                <p>
+                  Lynkz is the brainchild of four friends who came together with a shared dream-to build a creative tech agency that blends storytelling, design, and engineering into solutions that matter. We're not just developers or marketers—we’re builders, hustlers, designers, and strategists who love solving real problems.
+                </p>
+                <p>
+                  Our strength lies in our diversity—one part code, one part content, one part strategy, one part hustle. From web development to digital campaigns, branding to analytics, we create work that speaks with clarity and performs with purpose.
+                </p>
+                <p>
+                  What makes Lynkz different isn’t just our skills—it’s the way we think. We’re small, fast, and deeply committed to every brand we work with. We treat every project like it’s our own startup, blending creativity with execution, and always staying hungry to learn, adapt, and deliver.
+                </p>
             </motion.div>
           </div>
         </div>
@@ -185,125 +144,71 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className={styles.teamSection} ref={teamRef}>
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <span className={styles.sectionSubtitle}>Our Experts</span>
-            <h2 className={styles.sectionTitle}>Meet The Team</h2>
-            <div className={styles.sectionDivider}></div>
-            <p style={{ marginTop: '1rem', color: 'var(--color-text-secondary)' }}>The talented individuals behind our success</p>
-          </div>
-          
-          <motion.div 
-            className={styles.teamGrid}
-            initial="hidden"
-            animate={isTeamInView ? "visible" : "hidden"}
-          >
-            {teamMembers.map((member, index) => (
-              <motion.div 
-                key={member.id}
-                className={styles.teamCard}
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  visible: { 
-                    opacity: 1, 
-                    y: 0,
-                    transition: { 
-                      duration: 0.6, 
-                      ease: 'easeOut',
-                      delay: index * 0.1
-                    }
-                  }
-                }}
-              >
-                <div className={styles.teamImage}>
-                  <img 
-                    src={member.avatar || `https://randomuser.me/api/portraits/${member.gender === 'female' ? 'women' : 'men'}/${member.id + 20}.jpg`} 
-                    alt={member.name} 
-                    loading="lazy"
-                  />
-                </div>
-                <div className={styles.teamContent}>
-                  <h3 className={styles.teamName}>{member.name}</h3>
-                  <span className={styles.teamRole}>{member.role}</span>
-                  <p className={styles.teamBio}>{member.bio}</p>
-                  <div className={styles.socialLinks}>
-                    {Object.entries(member.social).map(([platform, url]) => (
-                      <a 
-                        key={platform} 
-                        href={url} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className={styles.socialLink}
-                        aria-label={`${member.name}'s ${platform}`}
-                      >
-                        {socialIcons[platform]}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+
+
 
       {/* Timeline */}
-      <section className="section">
+      <section className={`section ${styles.timelineSection}`}>
         <div className="container">
           <motion.div 
-            className="section-header text-center"
+            className={`section-header text-center ${styles.sectionHeader}`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="section-title">Our Journey</h2>
-            <p className="section-subtitle">Milestones in our growth and success</p>
+            <span className={styles.sectionSubtitle}>Our Timeline</span>
+            <h2 className={styles.sectionTitle}>Our Journey</h2>
+            <p className={styles.sectionDescription}>Milestones in our growth and success story</p>
           </motion.div>
           
-          <div className="timeline">
+          <div className={styles.roadmapContainer}>
+            <div className={styles.roadmapLine}></div>
             {[
               {
-                year: '2018',
-                title: 'Company Founded',
-                description: 'Lynkz was founded with a small team of 3 people working out of a shared office space.'
-              },
-              {
-                year: '2019',
-                title: 'First Major Client',
-                description: 'Landed our first enterprise client, marking a significant milestone in our growth.'
-              },
-              {
-                year: '2020',
-                title: 'Team Expansion',
-                description: 'Expanded our team to 15 talented professionals across design, development, and marketing.'
-              },
-              {
-                year: '2021',
-                title: 'New Office',
-                description: 'Moved into our new headquarters in the heart of the city.'
+                year: '2022',
+                title: 'Vision Ignited',
+                description: 'Four friends started dreaming of building a company that combines creativity, technology, and impact.'
               },
               {
                 year: '2023',
-                title: '100+ Projects',
-                description: 'Successfully delivered over 100 projects for clients across various industries.'
+                title: 'Laying the Groundwork',
+                description: 'Spent time learning, experimenting, and helping a few clients while preparing to launch something bigger.'
+              },
+              {
+                year: '2025',
+                title: 'Lynkz Officially Launched',
+                description: 'Transformed our long-standing passion into reality by officially launching Lynkz—a creative tech agency.'
+              },
+              {
+                year: '2025',
+                title: 'First Clients & Real Impact',
+                description: 'Completed projects for 5+ clients across education, HR, retail, and marketing sectors, building strong case studies.'
+              },
+              {
+                year: '2025',
+                title: 'Expanding the Vision',
+                description: 'Started developing in-house products like TutorLink while scaling up our services and outreach.'
               }
-            ].map((item, index) => (
+              
+            ].map((item, index, array) => (
               <motion.div 
                 key={index}
-                className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}
+                className={`${styles.roadmapItem} ${index % 2 === 0 ? styles.left : styles.right}`}
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileInView={{ 
+                  opacity: 1, 
+                  y: 0,
+                  transition: { duration: 0.5, delay: index * 0.15 }
+                }}
+                viewport={{ once: true }}
               >
-                <div className="timeline-dot"></div>
-                <div className="timeline-content">
-                  <div className="timeline-year">{item.year}</div>
-                  <h3 className="timeline-title">{item.title}</h3>
-                  <p className="timeline-description">{item.description}</p>
+                <div className={styles.roadmapDot}></div>
+                <div className={styles.roadmapYear}>{item.year}</div>
+                <div className={styles.roadmapContent}>
+
+                  <h3 className={styles.roadmapTitle}>{item.title}</h3>
+                  <p className={styles.roadmapDescription}>{item.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -312,23 +217,29 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section cta bg-accent">
+      <section className={styles.ctaSection}>
         <div className="container">
           <motion.div 
-            className="cta-content text-center"
+            className={styles.ctaContent}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="cta-title">Want to be part of our story?</h2>
-            <p className="cta-subtitle">We're always looking for talented individuals to join our team</p>
-            <a href="#" className="btn btn--dark" data-cursor-hover>
-              View Open Positions
+            <h2 className={styles.ctaTitle}>Let's Build Something Great Together</h2>
+            <p className={styles.ctaSubtitle}>Whether you have an idea, a project, or just want to connect — we'd love to hear from you.</p>
+            <a href="#contact" className={styles.ctaButton} data-cursor-hover>
+              Connect With Us
+              <span className={styles.ctaButtonIcon}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </span>
             </a>
           </motion.div>
         </div>
       </section>
+
     </div>
   );
 };

@@ -1,6 +1,237 @@
 .servicesSection {
+  padding: 0;
+  background: var(--color-bg);
+}
+
+.heroSection {
+  position: relative;
+  height: 60vh;
+  min-height: 500px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Why Us Section */
+.whyUsSection {
   padding: 6rem 0;
-  background: linear-gradient(to bottom, var(--color-bg), var(--color-bg-secondary));
+  background: var(--color-bg-secondary);
+  position: relative;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 60px;
+  height: 4px;
+  background: var(--color-accent);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.whyUsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.whyUsCard {
+  background: var(--color-bg);
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whyUsCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.whyUsCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.whyUsCard p {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* Customer Journey */
+.journeySection {
+  padding: 6rem 0;
+  background: var(--color-bg);
+}
+
+.journeyContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.journeyLine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--color-accent);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.journeyItems {
+  position: relative;
+  z-index: 2;
+}
+
+.journeyItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.journeyItem:last-child {
+  margin-bottom: 0;
+}
+
+.journeyContent {
+  width: 45%;
+  padding: 2rem;
+  background: var(--color-bg-secondary);
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.journeyItem:nth-child(odd) .journeyContent {
+  margin-right: auto;
+}
+
+.journeyItem:nth-child(even) .journeyContent {
+  margin-left: auto;
+}
+
+.journeyContent h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-accent);
+}
+
+/* Quality Assured */
+.qualitySection {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  color: white;
+  text-align: center;
+}
+
+.qualityContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.qualityContent h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.qualityContent p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.qualityBadge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  margin-top: 2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.qualityBadge svg {
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    height: 70vh;
+    min-height: 400px;
+  }
+  
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.2rem;
+  }
 }
 
 .container {
