@@ -1,6 +1,6 @@
 import React from 'react';
-import { FiGithub, FiLinkedin, FiDribbble, FiMail, FiPhone, FiMapPin, FiClock, FiInstagram, FiYoutube, FiFacebook } from 'react-icons/fi';
-import { FaXTwitter, FaBehance } from 'react-icons/fa6';
+import {  FiLinkedin,  FiMail, FiPhone, FiMapPin, FiClock, FiInstagram,  FiFacebook } from 'react-icons/fi';
+import { FaXTwitter } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
@@ -94,9 +94,9 @@ const Footer: React.FC = () => {
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className={styles.logo}>
-              Lynkz<span className={styles.logoDot}>.</span>
-            </h3>
+            <Link to={'/'} className={styles.logo}>
+              <img src="/logo.png" className={styles.logoimg} alt="" />
+            </Link>
             <p className={styles.tagline}>
               Where Creative Meets Conversion
             </p>

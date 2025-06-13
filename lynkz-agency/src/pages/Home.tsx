@@ -26,26 +26,7 @@ const services = [
     title: 'Digital Advertising (Meta & Google Ads)',
     description: 'Maximize reach and ROI with precisely targeted digital campaigns.',
     icon: <FiSearch size={32} />,
-  },
-  {
-    id: 4,
-    title: 'Branding & Identity',
-    description: 'Build a powerful, memorable brand that stands the test of time.',
-    icon: <FiLayers size={32} />,
-  },
-  {
-    id: 5,
-    title: 'Data Analytics',
-    description: 'Turn your business data into actionable insights and decisions.',
-    icon: <VscGraph  size={32} />,
-  },
-    {
-    id: 6,
-    title: 'AI Powered Marketing',
-    description: 'Harness AI to create, optimize, and scale your marketing like never before.',
-    icon: <VscGraph  size={32} />,
-  },
-  
+  }
 ];
 
 const testimonials = [
@@ -187,8 +168,14 @@ const Home = () => {
                 </Link>
               </motion.div>
             ))}
+            
           </motion.div>
+          <div className='d-flex justify-content-center'>
+          <Link className='mt-5 ' to={'/services'}>View More</Link>
+          </div>
+
         </div>
+                    
       </section>
 
       {/* Marquee Service Slider */}

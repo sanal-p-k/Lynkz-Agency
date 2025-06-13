@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { FiArrowRight, FiCheck, FiCode, FiLayers, FiSearch, FiDollarSign, FiShare2, FiPieChart } from 'react-icons/fi';
+import { VscGraph } from "react-icons/vsc";
 import styles from './Services.module.css';
 
 // Service data
@@ -36,7 +37,7 @@ const services = [
   {
     id: 'analytics',
     title: 'Analytics',
-    icon: <FiPieChart />,
+    icon: <VscGraph  />,
     shortDescription: 'Insights to drive decisions.',
     description: 'Actionable insights from your data to make informed business decisions and optimize performance.'
   },
@@ -68,6 +69,9 @@ const Services = () => {
   return (
     <section id="services" className={styles.servicesSection}>
       <div className={styles.container}>
+        <div className='d-flex justify-content-center mt-5'>
+          <h1>Our Services</h1>
+        </div>
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

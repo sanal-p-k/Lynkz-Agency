@@ -1491,6 +1491,11 @@
   margin-top: 3rem;
 }
 
+.caseStudyCta{
+  display: flex;
+  justify-content: center;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 992px) {
   .portfolioGrid {

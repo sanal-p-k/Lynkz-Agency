@@ -110,6 +110,7 @@
   --text-muted: var(--gray-400);
   --text-on-primary: var(--white);
   --text-on-accent: var(--white);
+  
 
   /* Border Colors */
   --border-light: var(--gray-200);

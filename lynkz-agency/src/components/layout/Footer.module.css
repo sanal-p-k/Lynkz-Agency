@@ -66,8 +66,8 @@
   display: inline-block;
 }
 
-.logoDot {
-  color: var(--accent);
+.logoimg{
+  width: 30%;
 }
 
 .tagline {
