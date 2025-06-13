@@ -10,7 +10,7 @@ const projects = [
     title: 'Nova Financial',
     category: 'web',
     tags: ['Web Development', 'UI/UX Design'],
-    image: 'project1.jpg',
+    image: '/port1.png',
     description: 'A modern banking platform with a focus on user experience and security.',
     challenge: 'Create a digital banking experience that simplifies complex financial management for users of all tech levels while maintaining enterprise-grade security.',
     solution: 'We developed a clean, intuitive interface with robust security features, including biometric authentication and real-time transaction monitoring.',
@@ -26,9 +26,9 @@ const projects = [
   {
     id: 2,
     title: 'Pulse Fitness',
-    category: 'branding',
+    category: 'uiux',
     tags: ['Branding', 'Print Design'],
-    image: 'project2.jpg',
+    image: '/port2.png',
     description: 'Complete brand identity for a modern fitness center chain.',
     challenge: 'Develop a brand identity that stands out in the competitive fitness industry while appealing to a broad demographic.',
     solution: 'We created a dynamic visual language with bold typography and energetic colors that reflect movement and transformation.',
@@ -44,7 +44,7 @@ const projects = [
     title: 'EcoHarvest',
     category: 'web',
     tags: ['E-commerce', 'Web Development'],
-    image: 'project3.jpg',
+    image: '/port3.png',
     description: 'Sustainable e-commerce platform for organic produce.',
     challenge: 'Build an online marketplace connecting local farmers with consumers while ensuring a seamless shopping experience.',
     solution: 'We developed a responsive platform with inventory management, real-time ordering, and sustainable packaging options.',
@@ -60,9 +60,9 @@ const projects = [
   {
     id: 4,
     title: 'Wanderlust Travel',
-    category: 'branding',
+    category: 'web',
     tags: ['Branding', 'Marketing'],
-    image: 'project4.jpg',
+    image: '/port4.png',
     description: 'Rebranding for a luxury travel agency.',
     challenge: 'Reposition a traditional travel agency as a premium, experiential travel curator for discerning clients.',
     solution: 'We crafted a sophisticated visual identity and content strategy that emphasizes unique, personalized travel experiences.',
@@ -77,9 +77,9 @@ const projects = [
   {
     id: 5,
     title: 'TechPulse',
-    category: 'web',
+    category: 'branding',
     tags: ['Web App', 'Dashboard'],
-    image: 'project5.jpg',
+    image: '/port5.png',
     description: 'Analytics dashboard for tech startups.',
     challenge: 'Create a data visualization platform that makes complex metrics accessible and actionable for non-technical users.',
     solution: 'We designed an intuitive dashboard with customizable widgets and clear data visualizations.',
@@ -94,9 +94,111 @@ const projects = [
   {
     id: 6,
     title: 'Bloom & Grow',
+    category: 'marketing',
+    tags: ['Packaging', 'Brand Identity'],
+    image: '/port6.png',
+    description: 'Sustainable packaging for a plant subscription service.',
+    challenge: 'Design eco-friendly packaging that protects plants during shipping while reflecting the brand\'s commitment to sustainability.',
+    solution: 'We developed biodegradable, plantable packaging that customers can grow into wildflowers.',
+    results: [
+      { label: 'Waste Reduction', value: '100%', description: 'Biodegradable materials' },
+      { label: 'Customer Delight', value: '4.8/5', description: 'Packaging rating' },
+      { label: 'Social Shares', value: '25k+', description: 'On social media' }
+    ],
+    link: '#',
+    featured: true
+  },
+  {
+    id: 7,
+    title: 'Bloom & Grow',
     category: 'branding',
     tags: ['Packaging', 'Brand Identity'],
-    image: 'project6.jpg',
+    image: '/port7.png',
+    description: 'Sustainable packaging for a plant subscription service.',
+    challenge: 'Design eco-friendly packaging that protects plants during shipping while reflecting the brand\'s commitment to sustainability.',
+    solution: 'We developed biodegradable, plantable packaging that customers can grow into wildflowers.',
+    results: [
+      { label: 'Waste Reduction', value: '100%', description: 'Biodegradable materials' },
+      { label: 'Customer Delight', value: '4.8/5', description: 'Packaging rating' },
+      { label: 'Social Shares', value: '25k+', description: 'On social media' }
+    ],
+    link: '#',
+    featured: true
+  },
+  {
+    id: 8,
+    title: 'Bloom & Grow',
+    category: 'branding',
+    tags: ['Packaging', 'Brand Identity'],
+    image: '/port8.jpg',
+    description: 'Sustainable packaging for a plant subscription service.',
+    challenge: 'Design eco-friendly packaging that protects plants during shipping while reflecting the brand\'s commitment to sustainability.',
+    solution: 'We developed biodegradable, plantable packaging that customers can grow into wildflowers.',
+    results: [
+      { label: 'Waste Reduction', value: '100%', description: 'Biodegradable materials' },
+      { label: 'Customer Delight', value: '4.8/5', description: 'Packaging rating' },
+      { label: 'Social Shares', value: '25k+', description: 'On social media' }
+    ],
+    link: '#',
+    featured: true
+  },
+  {
+    id: 9,
+    title: 'Bloom & Grow',
+    category: 'branding',
+    tags: ['Packaging', 'Brand Identity'],
+    image: '/port9.png',
+    description: 'Sustainable packaging for a plant subscription service.',
+    challenge: 'Design eco-friendly packaging that protects plants during shipping while reflecting the brand\'s commitment to sustainability.',
+    solution: 'We developed biodegradable, plantable packaging that customers can grow into wildflowers.',
+    results: [
+      { label: 'Waste Reduction', value: '100%', description: 'Biodegradable materials' },
+      { label: 'Customer Delight', value: '4.8/5', description: 'Packaging rating' },
+      { label: 'Social Shares', value: '25k+', description: 'On social media' }
+    ],
+    link: '#',
+    featured: true
+  },
+  {
+    id: 10,
+    title: 'Bloom & Grow',
+    category: 'branding',
+    tags: ['Packaging', 'Brand Identity'],
+    image: '/port10.png',
+    description: 'Sustainable packaging for a plant subscription service.',
+    challenge: 'Design eco-friendly packaging that protects plants during shipping while reflecting the brand\'s commitment to sustainability.',
+    solution: 'We developed biodegradable, plantable packaging that customers can grow into wildflowers.',
+    results: [
+      { label: 'Waste Reduction', value: '100%', description: 'Biodegradable materials' },
+      { label: 'Customer Delight', value: '4.8/5', description: 'Packaging rating' },
+      { label: 'Social Shares', value: '25k+', description: 'On social media' }
+    ],
+    link: '#',
+    featured: true
+  },
+  {
+    id: 11,
+    title: 'Bloom & Grow',
+    category: 'branding',
+    tags: ['Packaging', 'Brand Identity'],
+    image: '/port11.png',
+    description: 'Sustainable packaging for a plant subscription service.',
+    challenge: 'Design eco-friendly packaging that protects plants during shipping while reflecting the brand\'s commitment to sustainability.',
+    solution: 'We developed biodegradable, plantable packaging that customers can grow into wildflowers.',
+    results: [
+      { label: 'Waste Reduction', value: '100%', description: 'Biodegradable materials' },
+      { label: 'Customer Delight', value: '4.8/5', description: 'Packaging rating' },
+      { label: 'Social Shares', value: '25k+', description: 'On social media' }
+    ],
+    link: '#',
+    featured: true
+  },
+  {
+    id: 12,
+    title: 'Bloom & Grow',
+    category: 'marketing',
+    tags: ['Packaging', 'Brand Identity'],
+    image: '/port12.png',
     description: 'Sustainable packaging for a plant subscription service.',
     challenge: 'Design eco-friendly packaging that protects plants during shipping while reflecting the brand\'s commitment to sustainability.',
     solution: 'We developed biodegradable, plantable packaging that customers can grow into wildflowers.',
@@ -114,8 +216,8 @@ const categories = [
   { id: 'all', name: 'All Work' },
   { id: 'web', name: 'Web Development' },
   { id: 'branding', name: 'Branding' },
-  { id: 'design', name: 'UI/UX Design' },
-  { id: 'marketing', name: 'Marketing' }
+  { id: 'marketing', name: 'Marketing' },
+  { id: 'uiux', name: 'UI/UX Design' },
 ];
 
 const Portfolio = () => {
@@ -207,15 +309,14 @@ const Portfolio = () => {
                 } : {}}
               >
                 <img 
-                  src={`/images/portfolio/${project.image}`} 
-                  alt={project.title} 
+                  src={`${project.image}`} 
                   className={styles.projectImage}
                   onError={(e) => {
                     // Fallback image in case the project image doesn't load
                     (e.target as HTMLImageElement).src = `https://placehold.co/600x400/1a1a1a/ffffff?text=${encodeURIComponent(project.title)}`;
                   }}
                 />
-                <div className={styles.projectContent}>
+                {/* <div className={styles.projectContent}>
                   <span className={styles.projectCategory}>
                     {project.category === 'web' ? 'Web Development' : 'Branding'}
                   </span>
@@ -228,7 +329,7 @@ const Portfolio = () => {
                   <span className={styles.projectLink}>
                     View Project <FiArrowRight />
                   </span>
-                </div>
+                </div> */}
               </motion.article>
             ))}
           </div>
@@ -250,77 +351,25 @@ const Portfolio = () => {
                   exit={{ y: 50, opacity: 0 }}
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <button 
+                  {/* <button 
                     className={styles.closeButton} 
                     onClick={closeProjectModal}
                     aria-label="Close modal"
                   >
                     <FiX size={20} />
-                  </button>
+                  </button> */}
                   
                   <div className={styles.modalBody}>
                     <div>
                       <img 
-                        src={`/images/portfolio/${selectedProject.image}`} 
-                        alt={selectedProject.title}
+                        src={`${selectedProject.image}`} 
                         className={styles.modalImage}
                         onError={(e) => {
                           (e.target as HTMLImageElement).src = `https://placehold.co/800x600/1a1a1a/ffffff?text=${encodeURIComponent(selectedProject.title)}`;
                         }}
                       />
                     </div>
-                    <div className={styles.modalDetails}>
-                      <h2 className={styles.modalTitle}>{selectedProject.title}</h2>
-                      <p className={styles.modalDescription}>
-                        {selectedProject.description}
-                      </p>
-                      
-                      <h3 className={styles.sectionTitle}>The Challenge</h3>
-                      <p className={styles.modalDescription}>
-                        {selectedProject.challenge}
-                      </p>
-                      
-                      <h3 className={styles.sectionTitle}>Our Solution</h3>
-                      <p className={styles.modalDescription}>
-                        {selectedProject.solution}
-                      </p>
-                      
-                      <h3 className={styles.sectionTitle}>Key Results</h3>
-                      <div className={styles.resultsGrid}>
-                        {selectedProject.results.map((result, index) => (
-                          <div key={index} className={styles.resultItem}>
-                            <div className={styles.resultValue}>{result.value}</div>
-                            <div className={styles.resultLabel}>{result.label}</div>
-                            <div className={styles.resultDescription}>
-                              {result.description}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                      
-                      <div className={styles.modalLinks}>
-                        {selectedProject.link && (
-                          <a 
-                            href={selectedProject.link} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className={`${styles.modalLink} ${styles.primaryLink}`}
-                          >
-                            <FiExternalLink /> View Live
-                          </a>
-                        )}
-                        {selectedProject.github && (
-                          <a 
-                            href={selectedProject.github} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className={`${styles.modalLink} ${styles.secondaryLink}`}
-                          >
-                            <FiGithub /> View Code
-                          </a>
-                        )}
-                      </div>
-                    </div>
+
                   </div>
                 </motion.div>
               </motion.div>
