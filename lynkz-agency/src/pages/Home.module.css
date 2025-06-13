@@ -2,12 +2,12 @@
 .marqueeSlider {
   width: 100%;
   overflow: hidden;
-  background: var(--color-bg-secondary);
   padding: 1rem 0;
   margin: 0;
   position: relative;
   z-index: 1;
   transform: translateZ(0); /* Force hardware acceleration */
+  background: none;
 }
 
 .marqueeWrapper {
@@ -36,6 +36,10 @@
 }
 
 /* Stroke Text (First Marquee) */
+.strokeText {
+  text-align: left;
+}
+
 .strokeText span {
   display: inline-flex;
   align-items: center;
@@ -44,7 +48,7 @@
   color: transparent;
   -webkit-text-stroke: 1.5px var(--color-text);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   margin: 0 0.5rem;
   transition: all 0.3s ease;
   line-height: 1;
@@ -142,33 +146,21 @@
 /* Hero Section */
 .hero {
   position: relative;
-  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.9)), 
-              url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-  background-attachment: fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
+              url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80') no-repeat center center/cover;
   overflow: visible;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 80vh;
-  padding: 2rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-height: 600px;
+  padding: 4rem 2rem;
   z-index: 1;
   margin: 0;
   width: 100%;
   box-sizing: border-box;
-  text-align: center;
-  color: white;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(10, 10, 30, 0.6);
-  z-index: 1;
-  backdrop-filter: blur(2px);
+  text-align: left;
+  color: #ffffff;
+  background-attachment: fixed;
 }
 
 .heroBackground {
@@ -241,58 +233,141 @@
   margin: 0 12px;
 }
 
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: var(--header-height) 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  width: 100%;
+}
+
 .heroTitle {
-  font-size: clamp(2.2rem, 4.5vw, 4rem);
-  font-weight: 800;
-  line-height: 1.1;
-  margin: 0 auto 1.2rem;
-  color: white;
-  max-width: 900px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  padding: 1.5rem 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1.5rem 0;
+  color: #ffffff;
+  max-width: 800px;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: -0.5px;
+  padding: 0;
+  background: none;
+  backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+  position: relative;
+  z-index: 2;
 }
 
 .heroTitle .highlight {
-  background: linear-gradient(90deg, #8a2be2, #00f7ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--color-accent);
   position: relative;
-  display: inline-block;
-  text-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+  display: inline;
+  font-weight: 700;
+  text-decoration: none;
+  background: none;
+  padding: 0;
+  border: none;
+  box-shadow: none;
 }
 
-/* Floating orbs */
-.floatingOrb1,
-.floatingOrb2 {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(40px);
-  opacity: 0.6;
-  z-index: 0;
+/* Hero Subtitle */
+.heroSubtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  line-height: 1.6;
+  text-align: left;
+  font-weight: 400;
+  position: relative;
+  z-index: 2;
 }
 
-.floatingOrb1 {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(138, 43, 226, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
-  top: 20%;
-  right: 10%;
-  animation: float1 15s ease-in-out infinite;
+/* Hero Buttons */
+.heroButtons {
+  display: flex;
+  gap: 0.75rem;
+  margin: 1.5rem 0 0 0;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
 }
 
-.floatingOrb2 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(0, 247, 255, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
-  bottom: 10%;
-  left: 10%;
-  animation: float2 20s ease-in-out infinite;
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+  text-transform: none;
+  letter-spacing: 0.3px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.primaryButton {
+  background-color: var(--color-accent);
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.primaryButton:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.secondaryButton {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.secondaryButton:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+  border-color: var(--color-accent);
+  color: #fff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero {
+    padding: calc(var(--header-height) + 2rem) 0;
+    text-align: center;
+  }
+  
+  .heroTitle,
+  .heroSubtitle {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .heroButtons {
+    justify-content: center;
+  }
 }
 
 @keyframes float1 {
@@ -683,9 +758,10 @@
 
 .marquee2 .marqueeItem {
   color: var(--color-text);
-  font-size: 4rem;
-  font-weight: 800;
-  margin: 0 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 1.5rem;
+  text-align: left;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   background: var(--gradient-primary);

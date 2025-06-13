@@ -56,7 +56,7 @@ const Home = () => {
 
   return (
     <div className={styles.home}>
-      {/* Hero Section */}
+     {/* Hero Section */}
       <section className={styles.hero} id="home" ref={heroRef}>
         <div className={styles.heroContent}>
           <motion.h1 
@@ -65,65 +65,32 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Transform Your Digital Presence with <span className={styles.highlight}>Creative Solutions</span>
+            Building Brands, Elevating Experiences — <span className={styles.highlight}>We’re the Creative Force Behind Your Growth</span>
           </motion.h1>
-          <motion.p 
-            className={styles.heroSubtitle}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-          >
-            We help businesses grow with innovative web solutions, stunning designs, and data-driven strategies that deliver real results.
-          </motion.p>
           <motion.div 
             className={styles.heroButtons}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link to="/contact" className={styles.primaryButton}>
-                Get Started <FiArrowRight className="ml-2" />
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link to="/services" className={styles.secondaryButton}>
-                Our Services
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <a href="/Lynkz_Brochure.pdf" target="_blank" rel="noopener noreferrer" className={styles.secondaryButton}>
-                Download Brochure
-              </a>
-            </motion.div>
+            <Link to="/contact" className={styles.primaryButton}>
+              Let’s Talk <FiArrowRight style={{ marginLeft: '8px' }} />
+            </Link>
+            <Link to="/services" className={styles.secondaryButton}>
+              Explore Services
+            </Link>
+            <a 
+              href="/Lynkz_Brochure.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={styles.secondaryButton}
+            >
+              Download Brochure
+            </a>
           </motion.div>
         </div>
-        
-        {/* Animated background elements */}
-        <motion.div 
-          className={styles.floatingOrb1}
-          animate={{
-            y: [0, -20, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div 
-          className={styles.floatingOrb2}
-          animate={{
-            y: [0, 20, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1
-          }}
-        />
       </section>
+
 
         
 
