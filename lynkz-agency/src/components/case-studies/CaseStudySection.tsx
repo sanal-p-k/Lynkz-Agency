@@ -1,41 +1,22 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiArrowRight, FiExternalLink } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
+import { FiArrowRight } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 import styles from '../../pages/Home.module.css';
 
-const caseStudies = [
-  {
-    id: 1,
-    title: 'E-commerce Platform Redesign',
-    category: 'Web Design',
-    description: 'How we increased conversion rates by 45% for a leading online retailer through a complete platform redesign.',
-    image: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    link: '/case-studies/ecommerce-redesign',
-    tags: ['UI/UX', 'E-commerce', 'Conversion']
-  },
-  {
-    id: 2,
-    title: 'Mobile App Development',
-    category: 'App Development',
-    description: 'Building a seamless mobile experience that increased user engagement by 300% for a fintech startup.',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    link: '/case-studies/mobile-app',
-    tags: ['Mobile', 'Fintech', 'React Native']
-  },
-  {
-    id: 3,
-    title: 'Brand Identity & Strategy',
-    category: 'Branding',
-    description: 'Transforming a traditional business into a modern brand with a 200% increase in brand recognition.',
-    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    link: '/case-studies/brand-identity',
-    tags: ['Branding', 'Strategy', 'Identity']
-  }
-];
+// Import case studies from CaseStudies.tsx
+import { caseStudies as allCaseStudies } from '../../pages/CaseStudies';
+
+// Only show the first 3 case studies on the home page
+const caseStudies = allCaseStudies.slice(0, 3);
 
 const CaseStudySection = () => {
-  const [activeCard, setActiveCard] = useState<number | null>(null);
+  const navigate = useNavigate();
+  const [activeCard, setActiveCard] = useState<string | null>(null);
+
+  const handleCardClick = (id: string) => {
+    navigate(`/case-studies/${id}`);
+  };
 
   return (
     <section className={styles.caseStudies} id="case-studies">
@@ -44,7 +25,7 @@ const CaseStudySection = () => {
           <span className={styles.sectionSubtitle}>Our Work</span>
           <h2 className={styles.sectionTitle}>Case Studies</h2>
           <p className={styles.sectionDescription}>
-            Explore our successful projects and see how we've helped businesses achieve their goals.
+            Explore our successful projects and see how we've helped businesses transform their digital presence.
           </p>
         </div>
 
@@ -59,34 +40,53 @@ const CaseStudySection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               onMouseEnter={() => setActiveCard(study.id)}
               onMouseLeave={() => setActiveCard(null)}
+              onClick={() => handleCardClick(study.id)}
+              style={{ cursor: 'pointer' }}
             >
-              <div className={styles.caseStudyImage}>
-                <img src={study.image} alt={study.title} loading="lazy" />
-                <div className={styles.caseStudyOverlay}>
-                  <Link to={study.link} className={styles.caseStudyLink}>
-                    View Case Study <FiExternalLink />
-                  </Link>
-                </div>
+              <div className={styles.imageContainer}>
+                <motion.img 
+                  src={study.imageUrl} 
+                  alt={study.title} 
+                  className={styles.caseStudyImage}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.4 }}
+                />
+                <span className={styles.categoryTag}>{study.category}</span>
               </div>
               <div className={styles.caseStudyContent}>
-                <h3 className={styles.caseStudyTitle}>
-                  <Link to={study.link}>{study.title}</Link>
-                </h3>
-                <p className={styles.caseStudyDescription}>{study.description}</p>
-                <div className={styles.caseStudyTags}>
-                  {study.tags.map((tag, i) => (
-                    <span key={i} className={styles.caseStudyTag}>{tag}</span>
-                  ))}
+                <h3 className={styles.cardTitle}>{study.title}</h3>
+                <p className={styles.clientName}>{study.client}</p>
+                <p className={styles.description}>{study.description}</p>
+                <div className={styles.results}>
+                  <h4 className={styles.resultsTitle}>Key Results</h4>
+                  <ul className={styles.resultsList}>
+                    {study.results.map((result, i) => (
+                      <li key={i} className={styles.resultItem}>
+                        <span className={styles.resultBullet}>•</span>
+                        <span>{result}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
+                <button 
+                  className={styles.readMoreBtn}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleCardClick(study.id);
+                  }}
+                  aria-label={`Read more about ${study.title}`}
+                >
+                  Read Full Case Study <FiArrowRight className={styles.arrowIcon} />
+                </button>
               </div>
             </motion.div>
           ))}
         </div>
 
         <div className={styles.caseStudyCta}>
-          <Link to="/case-studies" className={styles.secondaryButton}>
+          <a href="/case-studies" className={styles.secondaryButton}>
             View All Case Studies <FiArrowRight />
-          </Link>
+          </a>
         </div>
       </div>
     </section>

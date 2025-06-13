@@ -80,74 +80,79 @@ const CaseStudyCard: React.FC<CaseStudyProps> = ({
   );
 };
 
+// Export the caseStudies array for use in other components
+export const caseStudies: CaseStudyProps[] = [
+  {
+    id: 'google-business-profile',
+    title: 'How Google Business Profile Can Transform Your Online Presence',
+    description: 'Optimizing your Google Business Profile to boost local visibility, drive traffic, and improve brand credibility.',
+    imageUrl: 'https://images.unsplash.com/photo-1522199710521-72d69614c702?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+    category: 'SEO & Local Marketing',
+    client: 'Local Biz Pro',
+    results: [
+      '300% increase in local search impressions',
+      '50% rise in customer calls and visits',
+      'Improved Google Maps ranking to top 3'
+    ]
+  },
+  {
+    id: 'digital-marketing-audit',
+    title: 'How to Conduct a Digital Marketing Audit for Your Business',
+    description: 'A comprehensive audit that reveals gaps in strategy, platforms, and messaging—leading to a data-backed action plan.',
+    imageUrl: 'https://images.unsplash.com/photo-1562577309-2592ab84b1bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+    category: 'Digital Strategy',
+    client: 'AuditEdge Solutions',
+    results: [
+      'Identified 5 key conversion drop-off points',
+      'Unified messaging across 6 channels',
+      'Reduced CAC by 35% after implementation'
+    ]
+  },
+  {
+    id: 'facebook-ads-cost-reduction',
+    title: 'How to Reduce Cost Per Result in Facebook Ads',
+    description: 'Ad creative testing and audience segmentation reduced ad spend while improving campaign ROI.',
+    imageUrl: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+    category: 'Social Ads',
+    client: 'GreenSpark Retail',
+    results: [
+      'Reduced CPR by 60% in 2 weeks',
+      'Doubled CTR with creative refresh',
+      'Improved ROI from 2.1x to 4.7x'
+    ]
+  },
+  {
+    id: 'cta-optimization',
+    title: 'Mastering Calls to Action in Digital Marketing: Everything You Should Know',
+    description: 'We A/B tested CTA placement and copy across web and ads to maximize engagement and conversions.',
+    imageUrl: 'https://images.unsplash.com/photo-1581090700227-1e8e0c4f661e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+    category: 'Conversion Rate Optimization',
+    client: 'EngageNow Media',
+    results: [
+      'CTA click-through rate increased by 88%',
+      'Landing page conversions up 47%',
+      'Email CTR improved by 39%'
+    ]
+  },
+  {
+    id: 'data-analytics-business-growth',
+    title: 'How Data Analytics Drives Strategic Business Growth',
+    description: 'Using data dashboards and insights to guide decision-making, improve marketing ROI, and optimize customer experience.',
+    imageUrl: 'https://images.unsplash.com/photo-1581090464777-752d1d8c1040?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+    category: 'Data Analytics',
+    client: 'BrightMetrics Inc.',
+    results: [
+      'Visualized performance across 10 departments',
+      'Cut churn by 23% through data-led interventions',
+      'Boosted customer retention by 18%'
+    ]
+  }
+];
+
+// CaseStudies component that uses the exported caseStudies array
 const CaseStudies: React.FC = () => {
-  const caseStudies: CaseStudyProps[] = [
-    {
-      id: 'google-business-profile',
-      title: 'How Google Business Profile Can Transform Your Online Presence',
-      description: 'Optimizing your Google Business Profile to boost local visibility, drive traffic, and improve brand credibility.',
-      imageUrl: 'https://images.unsplash.com/photo-1522199710521-72d69614c702?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
-      category: 'SEO & Local Marketing',
-      client: 'Local Biz Pro',
-      results: [
-        '300% increase in local search impressions',
-        '50% rise in customer calls and visits',
-        'Improved Google Maps ranking to top 3'
-      ]
-    },
-    {
-      id: 'digital-marketing-audit',
-      title: 'How to Conduct a Digital Marketing Audit for Your Business',
-      description: 'A comprehensive audit that reveals gaps in strategy, platforms, and messaging—leading to a data-backed action plan.',
-      imageUrl: 'https://images.unsplash.com/photo-1562577309-2592ab84b1bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
-      category: 'Digital Strategy',
-      client: 'AuditEdge Solutions',
-      results: [
-        'Identified 5 key conversion drop-off points',
-        'Unified messaging across 6 channels',
-        'Reduced CAC by 35% after implementation'
-      ]
-    },
-    {
-      id: 'facebook-ads-cost-reduction',
-      title: 'How to Reduce Cost Per Result in Facebook Ads',
-      description: 'Ad creative testing and audience segmentation reduced ad spend while improving campaign ROI.',
-      imageUrl: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
-      category: 'Social Ads',
-      client: 'GreenSpark Retail',
-      results: [
-        'Reduced CPR by 60% in 2 weeks',
-        'Doubled CTR with creative refresh',
-        'Improved ROI from 2.1x to 4.7x'
-      ]
-    },
-    {
-      id: 'cta-optimization',
-      title: 'Mastering Calls to Action in Digital Marketing: Everything You Should Know',
-      description: 'We A/B tested CTA placement and copy across web and ads to maximize engagement and conversions.',
-      imageUrl: 'https://images.unsplash.com/photo-1581090700227-1e8e0c4f661e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
-      category: 'Conversion Rate Optimization',
-      client: 'EngageNow Media',
-      results: [
-        'CTA click-through rate increased by 88%',
-        'Landing page conversions up 47%',
-        'Email CTR improved by 39%'
-      ]
-    },
-    {
-      id: 'data-analytics-business-growth',
-      title: 'How Data Analytics Drives Strategic Business Growth',
-      description: 'Using data dashboards and insights to guide decision-making, improve marketing ROI, and optimize customer experience.',
-      imageUrl: 'https://images.unsplash.com/photo-1581090464777-752d1d8c1040?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
-      category: 'Data Analytics',
-      client: 'BrightMetrics Inc.',
-      results: [
-        'Visualized performance across 10 departments',
-        'Cut churn by 23% through data-led interventions',
-        'Boosted customer retention by 18%'
-      ]
-    }
-  ];
+  // Use the exported caseStudies array directly
+  const displayedCaseStudies = [...caseStudies];
 
   return (
     <div className={styles.caseStudiesPage}>
@@ -175,11 +180,16 @@ const CaseStudies: React.FC = () => {
       <section className={styles.caseStudiesSection}>
         <div className={styles.container}>
           <div className={styles.caseStudiesGrid}>
-            {caseStudies.map((caseStudy, index) => (
-              <CaseStudyCard 
-                key={caseStudy.id} 
-                {...caseStudy} 
-                style={{ '--delay': index * 0.1 + 's' } as React.CSSProperties}
+            {displayedCaseStudies.map((study) => (
+              <CaseStudyCard
+                key={study.id}
+                id={study.id}
+                title={study.title}
+                description={study.description}
+                imageUrl={study.imageUrl}
+                category={study.category}
+                client={study.client}
+                results={study.results}
               />
             ))}
           </div>

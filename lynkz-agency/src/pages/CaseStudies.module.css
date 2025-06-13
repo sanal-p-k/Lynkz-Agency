@@ -27,10 +27,7 @@
   font-weight: 800;
   line-height: 1.1;
   margin: 0 auto 1.5rem;
-  background: linear-gradient(to right, var(--color-primary), var(--color-accent));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
   max-width: 900px;
 }
 
