@@ -203,12 +203,13 @@
   margin: 2rem auto 0;
   padding: 2rem 2.5rem;
   text-align: center;
-  background: rgba(15, 15, 35, 0.5);
+  /* background: rgba(15, 15, 35, 0.5);
   backdrop-filter: blur(10px);
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1); */
   transform: translateY(2rem);
+  
 }
 
 .heroBadge {
@@ -252,6 +253,7 @@
   margin: 0 auto;
   padding: 0 var(--spacing-md);
   width: 100%;
+  /* background-color: #00ff8  8; */
 }
 
 .heroTitle {
@@ -299,13 +301,16 @@
 }
 
 /* Hero Buttons */
+.heroButtonsWrapper {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
 .heroButtons {
   display: flex;
   gap: 0.75rem;
-  margin: 1.5rem 0 0 0;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  width: 100%;
 }
 
 .primaryButton,
@@ -365,7 +370,10 @@
     margin-right: auto;
   }
   
-  .heroButtons {
+  /* .heroButtons {
+    justify-content: center;
+  } */
+  .heroButtonsWrapper{
     justify-content: center;
   }
 }
@@ -1230,7 +1238,7 @@
 
 /* Outline Marquee */
 .outlineMarquee .strokeText {
-  text-stroke: 1px var(--color-text);
+  /* text-stroke: 1px var(--color-text); */
   color: transparent;
   font-weight: 700;
   transition: all 0.3s ease;

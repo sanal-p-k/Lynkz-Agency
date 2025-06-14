@@ -46,6 +46,7 @@ const About = () => {
 
 
 
+
   return (
     <div className={styles.about}>
       {/* Hero Section */}

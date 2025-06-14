@@ -55,10 +55,10 @@ const Home = () => {
 
   return (
     <div className={styles.home}>
-     {/* Hero Section */}
+      {/* Hero Section */}
       <section className={styles.hero} id="home" ref={heroRef}>
         <div className={styles.heroContent}>
-          <motion.h1 
+          <motion.h1
             className={styles.heroTitle}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -66,32 +66,34 @@ const Home = () => {
           >
             Building Brands, Elevating Experiences — <span className={styles.highlight}>We’re the Creative Force Behind Your Growth</span>
           </motion.h1>
-          <motion.div 
-            className={styles.heroButtons}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          >
-            <Link to="/contact" className={styles.primaryButton}>
-              Let’s Talk <FiArrowRight style={{ marginLeft: '8px' }} />
-            </Link>
-            <Link to="/services" className={styles.secondaryButton}>
-              Explore Services
-            </Link>
-            <a 
-              href="/Lynkz_Brochure.pdf" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className={styles.secondaryButton}
+          <div className={styles.heroButtonsWrapper}>
+            <motion.div
+              className={styles.heroButtons}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             >
-              Download Brochure
-            </a>
-          </motion.div>
+              <Link to="/contact" className={styles.primaryButton}>
+                Let’s Talk <FiArrowRight style={{ marginLeft: '8px' }} />
+              </Link>
+              <Link to="/services" className={styles.secondaryButton}>
+                Explore Services
+              </Link>
+              <a
+                href="/Lynkz_Brochure.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.secondaryButton}
+              >
+                Download Brochure
+              </a>
+            </motion.div>
+          </div>
         </div>
       </section>
 
 
-        
+
 
       {/* Services Section */}
       <section className={styles.services} ref={servicesRef}>
@@ -102,22 +104,22 @@ const Home = () => {
             <div className={styles.sectionDivider}></div>
           </div>
 
-          <motion.div 
+          <motion.div
             className={`${styles.servicesGrid} ${isServicesInView ? styles.staggerChildren : ''}`}
             initial="hidden"
             animate={isServicesInView ? "visible" : "hidden"}
           >
             {services.map((service, index) => (
-              <motion.div 
-                key={service.id} 
+              <motion.div
+                key={service.id}
                 className={styles.serviceCard}
                 variants={{
                   hidden: { opacity: 0, y: 20 },
-                  visible: { 
-                    opacity: 1, 
+                  visible: {
+                    opacity: 1,
                     y: 0,
-                    transition: { 
-                      duration: 0.6, 
+                    transition: {
+                      duration: 0.6,
                       ease: 'easeOut',
                       delay: index * 0.1
                     }
@@ -134,14 +136,14 @@ const Home = () => {
                 </Link>
               </motion.div>
             ))}
-            
+
           </motion.div>
           <div className='d-flex justify-content-center'>
-          <Link className='mt-5 ' to={'/services'}>View More</Link>
+            <Link className='mt-5 ' to={'/services'}>View More</Link>
           </div>
 
         </div>
-                    
+
       </section>
 
       {/* Marquee Service Slider */}
@@ -215,9 +217,9 @@ const Home = () => {
               'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spotify/spotify-original.svg',
             ].map((logo, index) => (
               <div key={index} className={styles.logoSlide}>
-                <img 
-                  src={logo} 
-                  alt={`Client Logo ${index + 1}`} 
+                <img
+                  src={logo}
+                  alt={`Client Logo ${index + 1}`}
                   loading="lazy"
                 />
               </div>
@@ -235,22 +237,22 @@ const Home = () => {
             <div className={styles.sectionDivider}></div>
           </div>
 
-          <motion.div 
+          <motion.div
             className={`${styles.testimonialsGrid} ${isTestimonialsInView ? styles.staggerChildren : ''}`}
             initial="hidden"
             animate={isTestimonialsInView ? "visible" : "hidden"}
           >
             {testimonials.map((testimonial, index) => (
-              <motion.div 
-                key={testimonial.id} 
+              <motion.div
+                key={testimonial.id}
                 className={styles.testimonialCard}
                 variants={{
                   hidden: { opacity: 0, y: 20 },
-                  visible: { 
-                    opacity: 1, 
+                  visible: {
+                    opacity: 1,
                     y: 0,
-                    transition: { 
-                      duration: 0.6, 
+                    transition: {
+                      duration: 0.6,
                       ease: 'easeOut',
                       delay: index * 0.1
                     }
@@ -259,9 +261,9 @@ const Home = () => {
               >
                 <p className={styles.testimonialContent}>"{testimonial.content}"</p>
                 <div className={styles.testimonialAuthor}>
-                  <img 
-                    src={testimonial.avatar} 
-                    alt={testimonial.name} 
+                  <img
+                    src={testimonial.avatar}
+                    alt={testimonial.name}
                     className={styles.authorAvatar}
                     loading="lazy"
                   />

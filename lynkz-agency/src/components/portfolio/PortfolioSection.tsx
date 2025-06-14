@@ -9,43 +9,43 @@ const projects = [
     id: 1,
     title: 'E-commerce Platform',
     category: 'web',
-    image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/port3.png',
     description: 'Web Design'
   },
   {
     id: 2,
     title: 'Mobile App UI',
     category: 'app',
-    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/port2.png',
     description: 'App Development'
   },
   {
     id: 3,
-    title: 'Brand Identity',
-    category: 'branding',
-    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Branding'
-  },
-  {
-    id: 4,
-    title: 'Dashboard UI',
+    title: 'Landing page',
     category: 'web',
-    image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/port1.png',
     description: 'Web Design'
   },
   {
+    id: 4,
+    title: 'Jwellery poster',
+    category: 'branding',
+    image: '/port8.jpg',
+    description: 'branding'
+  },
+  {
     id: 5,
-    title: 'Fitness App',
+    title: 'Travel App',
     category: 'app',
-    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/port13.png',
     description: 'App Development'
   },
   {
     id: 6,
     title: 'Product Packaging',
     category: 'branding',
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Branding'
+    image: '/port10.png',
+    description: 'branding'
   },
 ];
 
@@ -120,9 +120,9 @@ const PortfolioSection = () => {
                   <div className={styles.portfolioContent}>
                     <h3>{project.title}</h3>
                     <p>{project.description}</p>
-                    <Link to={`/portfolio/project-${project.id}`} className={styles.portfolioLink}>
+                    {/* <Link to={`/portfolio/project-${project.id}`} className={styles.portfolioLink}>
                       <FiArrowRight />
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>

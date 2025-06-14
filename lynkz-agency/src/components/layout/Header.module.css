@@ -111,9 +111,7 @@
   white-space: nowrap;
 }
 
-.dropdownLink:hover {
-  /* background-color: #f5f5f5; */
-}
+
 
 .mobileNavItem {
   display: flex;
