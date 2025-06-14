@@ -43,9 +43,7 @@ const About = () => {
   const isAboutInView = useInView(aboutRef, { once: true, amount: 0.1 });
   const valuesRef = useRef(null);
   const isValuesInView = useInView(valuesRef, { once: true, amount: 0.1 });
-  const teamRef = useRef(null);
-  const isTeamInView = useInView(teamRef, { once: true, amount: 0.1 });
-
+ 
 
 
   return (
@@ -191,7 +189,7 @@ const About = () => {
                 description: 'Started developing in-house products like TutorLink while scaling up our services and outreach.'
               }
               
-            ].map((item, index, array) => (
+            ].map((item, index) => (
               <motion.div 
                 key={index}
                 className={`${styles.roadmapItem} ${index % 2 === 0 ? styles.left : styles.right}`}

@@ -5,7 +5,6 @@ import { FiArrowRight, FiCode, FiLayers, FiSearch } from 'react-icons/fi';
 import PortfolioSection from '../components/portfolio/PortfolioSection';
 import CaseStudySection from '../components/case-studies/CaseStudySection';
 import styles from './Home.module.css';
-import { VscGraph } from "react-icons/vsc";
 
 // Mock data
 const services = [
@@ -48,7 +47,6 @@ const testimonials = [
 
 const Home = () => {
   const heroRef = useRef(null);
-  const isHeroInView = useInView(heroRef, { once: true, amount: 0.3 });
   const servicesRef = useRef(null);
   const isServicesInView = useInView(servicesRef, { once: true, amount: 0.1 });
   const testimonialsRef = useRef(null);

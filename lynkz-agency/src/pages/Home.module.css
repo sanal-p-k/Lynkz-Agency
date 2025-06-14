@@ -1238,7 +1238,7 @@
 
 /* Outline Marquee */
 .outlineMarquee .strokeText {
-  text-stroke: 1px var(--color-text);
+  /* text-stroke: 1px var(--color-text); */
   color: transparent;
   font-weight: 700;
   transition: all 0.3s ease;
