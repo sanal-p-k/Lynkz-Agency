@@ -67,8 +67,14 @@ const Contact: React.FC = () => {
   const isHeroInView = useInView(heroRef, { once: true, amount: 0.3 });
   const isFormInView = useInView(formRef, { once: true, amount: 0.1 });
 
-  // Contact information in a single row
+  // Contact information
   const contactInfo: ContactInfo[] = [
+    {
+      icon: <FiMapPin className={styles.icon} />,
+      title: 'Our Location',
+      description: '123 Creative Street, Tech City, CA 94103, USA',
+      link: 'https://maps.google.com',
+    },
     {
       icon: <FiMail className={styles.icon} />,
       title: 'Email Us',
@@ -79,14 +85,13 @@ const Contact: React.FC = () => {
       icon: <FiPhone className={styles.icon} />,
       title: 'Call Us',
       description: '+1 (555) 123-4567',
-      description2: 'Mon - Fri, 9:00 - 18:00',
       link: 'tel:+15551234567',
     },
     {
       icon: <FiClock className={styles.icon} />,
       title: 'Working Hours',
-      description: 'Monday - Friday: 9:00 - 18:00',
-      description2: 'Saturday: 10:00 - 15:00',
+      description: 'Mon - Fri: 9:00 - 18:00',
+      description2: 'Sat - Sun: Closed',
     },
   ];
 
@@ -410,6 +415,25 @@ const Contact: React.FC = () => {
               </form>
             </motion.div>
 
+            {/* Map */}
+            <motion.div 
+              className={styles.mapContainer}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isFormInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className={styles.map}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2156627321265!2d-73.98784492407308!3d40.74844097138971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, borderRadius: '12px' }}
+                  allowFullScreen
+                  loading="lazy"
+                  title="Our Location"
+                ></iframe>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

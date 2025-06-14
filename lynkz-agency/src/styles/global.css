@@ -241,7 +241,7 @@ img {
   cursor: pointer;
   border: 2px solid transparent;
   
-  &--primary {
+  &:is(.btn--primary) {
     background: var(--color-accent);
     color: var(--color-bg);
     
@@ -254,7 +254,7 @@ img {
     }
   }
   
-  &--outline {
+  &:is(.btn--outline) {
     background: transparent;
     border: 2px solid var(--color-accent);
     color: var(--color-accent);

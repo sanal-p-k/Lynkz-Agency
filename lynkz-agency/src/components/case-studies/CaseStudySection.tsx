@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { useState } from 'react';
-=======
-import  { useState } from 'react';
->>>>>>> f2a73660eedcb904adb6df373cd4144bd94d1da1
 import { motion } from 'framer-motion';
 import { FiArrowRight } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
