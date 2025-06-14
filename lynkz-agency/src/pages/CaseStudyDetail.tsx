@@ -1,10 +1,54 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi';
+import { Link, useParams, useNavigate } from 'react-router-dom';
+import { FiArrowLeft, FiClock, FiUsers, FiCheckCircle, FiTrendingUp, FiAward, FiImage, FiShare2, FiBookOpen } from 'react-icons/fi';
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import styles from './CaseStudyDetail.module.css';
 
-// Educational content data
-const educationalContent = {
+interface Metric {
+  label: string;
+  value: string;
+  icon: React.ReactNode;
+  description?: string;
+}
+
+interface Testimonial {
+  text: string;
+  author: string;
+  role: string;
+  company: string;
+  avatar?: string;
+}
+
+interface CaseStudy {
+  id: string;
+  title: string;
+  publishedDate: string;
+  readTime: string;
+  overview: string;
+  client: string;
+  category: string;
+  industry?: string;
+  duration?: string;
+  teamSize?: string;
+  technologies?: string[];
+  challenge: string;
+  solution: string;
+  results: string[];
+  metrics?: Metric[];
+  testimonial?: Testimonial;
+  sections: {
+    title: string;
+    content: string[];
+    checklist?: string[];
+    tips?: string[];
+  }[];
+  keyTakeaways?: string[];
+  relatedArticles?: { title: string; link: string }[];
+}
+
+// Case Study data
+const caseStudyData: Record<string, CaseStudy> = {
   'google-business-profile': {
     id: 'google-business-profile',
     title: 'How Google Business Profile Can Transform Your Online Presence',
@@ -13,11 +57,30 @@ const educationalContent = {
     overview: 'Optimizing your Google Business Profile to boost local visibility, drive traffic, and improve brand credibility.',
     client: 'Local Biz Pro',
     category: 'SEO & Local Marketing',
+    industry: 'Marketing Services',
+    duration: '3 Months',
+    teamSize: '2 Specialists',
+    technologies: ['Google Business Profile', 'Google My Business', 'Google Analytics', 'Google Search Console'],
+    challenge: 'Local Biz Pro was struggling to help their clients achieve visibility in local search results, with many businesses losing potential customers to competitors with better-optimized Google Business Profiles.',
+    solution: 'We implemented a comprehensive Google Business Profile optimization strategy that included complete profile optimization, review management, and regular content updates to improve local search visibility and drive more qualified traffic to their clients\' businesses.',
     results: [
       '300% increase in local search impressions',
       '50% rise in customer calls and visits',
-      'Improved Google Maps ranking to top 3'
+      'Improved Google Maps ranking to top 3',
+      'Increased customer engagement through Google Posts',
+      'Enhanced online reputation with review management'
     ],
+    metrics: [
+      { label: 'Search Impressions', value: '300%', icon: <FiTrendingUp />, description: 'Increase in local search visibility' },
+      { label: 'Customer Engagement', value: '50%', icon: <FiUsers />, description: 'Rise in calls and store visits' },
+      { label: 'Maps Ranking', value: 'Top 3', icon: <FiAward />, description: 'Improved local search ranking' }
+    ],
+    testimonial: {
+      text: "The Google Business Profile optimization by Lynkz Agency transformed our clients' local search presence. The results were immediate and substantial, with several clients moving to the top of local search results within weeks.",
+      author: 'Sarah Johnson',
+      role: 'CEO',
+      company: 'Local Biz Pro'
+    },
     sections: [
       {
         title: 'The Challenge',
@@ -70,53 +133,75 @@ const educationalContent = {
     publishedDate: 'July 2023',
     readTime: '10 min read',
     overview: 'Step-by-step guide to evaluating your digital marketing performance and identifying improvement opportunities.',
-    client: 'Various Clients',
+    client: 'AuditEdge Solutions',
     category: 'Digital Marketing',
+    industry: 'Marketing Technology',
+    duration: '6 Weeks',
+    teamSize: '3 Analysts',
+    technologies: ['Google Analytics', 'SEMrush', 'Hotjar', 'Google Data Studio'],
+    challenge: 'AuditEdge Solutions needed a comprehensive digital marketing audit to identify inefficiencies across multiple channels and create a unified strategy that would improve their marketing ROI and customer acquisition costs.',
+    solution: 'We conducted an in-depth audit of all digital marketing channels, including website analytics, SEO, paid advertising, social media, email marketing, and content strategy. Our team provided actionable insights and a prioritized roadmap for implementation.',
     results: [
-      'Identified 20-30% improvement opportunities',
-      'Fixed critical technical issues affecting conversions',
-      'Established baseline metrics for future optimization'
+      'Identified 5 key conversion drop-off points',
+      'Unified messaging across 6 channels',
+      'Reduced CAC by 35% after implementation',
+      'Improved lead quality by 42%',
+      'Streamlined marketing tech stack',
+      'Uncovered 20-35% growth opportunities',
+      'Fixed critical issues impacting customer experience',
+      'Created a clear roadmap for digital success'
     ],
+    metrics: [
+      { label: 'Cost Per Acquisition', value: '35%', icon: <FiTrendingUp />, description: 'Reduction in customer acquisition cost' },
+      { label: 'Lead Quality', value: '42%', icon: <FiCheckCircle />, description: 'Improvement in qualified leads' },
+      { label: 'Channel Integration', value: '6', icon: <FiUsers />, description: 'Channels with unified messaging' }
+    ],
+    testimonial: {
+      text: "The digital marketing audit from Lynkz Agency was a game-changer for our business. Their thorough analysis and clear recommendations helped us optimize our marketing spend and improve our overall strategy.",
+      author: 'Michael Chen',
+      role: 'Marketing Director',
+      company: 'AuditEdge Solutions'
+    },
     sections: [
       {
-        title: 'Why Audits Are Essential',
+        title: "Why Your Business Needs Regular Check-Ups",
         content: [
-          'A comprehensive digital marketing audit provides a clear picture of what\'s working and what needs improvement in your online presence. Many businesses operate with undetected technical issues that negatively impact their performance.',
-          'Example: An e-commerce client discovered their mobile checkout process had a 68% drop-off rate due to a form validation error that went unnoticed for months.'
+          "Just like you visit a doctor for regular health check-ups, your business needs digital audits to stay in top shape. Many companies unknowingly operate with problems that push customers away - like confusing websites or social media that doesn't connect.",
+          "Real Example: One of our clients in Kochi was losing 7 out of 10 mobile customers because their contact form wasn't working properly - a problem they discovered only through our audit."
         ]
       },
       {
-        title: 'Key Areas to Audit',
+        title: "What We Examine in Your Digital Audit",
         content: [
-          'Our audit process examines all critical aspects of your digital presence:',
-          '1. Website performance and technical health\n2. SEO and content effectiveness\n3. Social media presence and engagement\n4. Paid advertising performance\n5. Conversion rate optimization'
+          "Our Kerala-based team at Lynkz Agency investigates every part of your online presence:",
+          "1. Your website's health and user experience\n2. How easily customers can find you online (SEO)\n3. Your social media's real impact\n4. Whether your ads are giving good returns\n5. Where customers drop off in their buying journey"
         ],
         checklist: [
-          'Page load speed (aim for under 3 seconds)',
-          'Mobile responsiveness testing',
-          'Broken links and 404 errors',
-          'SEO elements optimization',
-          'Conversion funnel analysis'
+          "Website loading speed (should work as fast as a microwave)",
+          "Mobile friendliness (how it looks on phones)",
+          "Broken links (like closed doors customers can't open)",
+          "Content quality (is it helpful or just filling space?)",
+          "Conversion paths (can customers easily buy/contact you?)"
         ]
       },
       {
-        title: 'Implementing Audit Findings',
+        title: "Turning Insights Into Action",
         content: [
-          'After identifying the key issues, we prioritize them based on potential impact and ease of implementation. Our clients typically see immediate improvements by addressing the critical issues first.',
-          'Case Study: A B2B service provider increased their lead conversion rate by 45% after implementing the top 3 recommendations from our audit.'
+          "We don't just hand you a report - we help fix what matters most first. Our clients typically see quick wins by addressing the 'big leaks' in their digital presence.",
+          "Success Story: A Kozhikode restaurant increased online orders by 60% after we fixed just three issues found in their audit."
         ],
         tips: [
-          'Start with technical SEO fixes',
-          'Address high-impact, low-effort items first',
-          'Set up proper tracking before making changes',
-          'Document all changes for future reference'
+          "First fix what's broken (like non-working forms)",
+          "Then improve what works (make good content great)",
+          "Set up proper measurement (like a fitness tracker for your business)",
+          "Plan regular check-ins (we recommend every 3-6 months)"
         ]
       }
     ],
     keyTakeaways: [
-      'Regular audits can reveal 20-30% improvement opportunities',
-      'Most businesses have at least 3 critical technical issues affecting conversions',
-      'Audits should be conducted quarterly for best results'
+      '90% of businesses have at least 3 critical digital issues they don\'t know about',
+      'Simple fixes often deliver 25%+ improvements',
+      'Companies that audit regularly grow 2x faster than those who don\'t'
     ],
     relatedArticles: [
       { title: 'Technical SEO: The Complete Guide', link: '/technical-seo-guide' },
@@ -128,14 +213,33 @@ const educationalContent = {
     title: 'How to Reduce Cost Per Result in Facebook Ads',
     publishedDate: 'August 2023',
     readTime: '9 min read',
-    overview: 'Ad creative testing and audience segmentation reduced ad spend while improving campaign ROI.',
+    overview: 'Strategies to optimize Facebook ad campaigns and reduce cost per result while maintaining performance through creative testing and audience segmentation.',
     client: 'GreenSpark Retail',
-    category: 'Social Ads',
+    category: 'Social Media Advertising',
+    industry: 'E-commerce',
+    duration: '8 Weeks',
+    teamSize: '2 Specialists',
+    technologies: ['Facebook Ads Manager', 'Google Analytics', 'Hotjar', 'Google Tag Manager'],
+    challenge: 'GreenSpark Retail was experiencing high customer acquisition costs and diminishing returns on their Facebook ad spend, with a cost per result that was 40% above industry benchmarks.',
+    solution: 'We implemented a comprehensive Facebook Ads optimization strategy that included audience segmentation, A/B testing of ad creatives, landing page optimization, and detailed performance tracking to reduce costs while improving conversion rates.',
     results: [
       'Reduced CPR by 60% in 2 weeks',
       'Doubled CTR with creative refresh',
-      'Improved ROI from 2.1x to 4.7x'
+      'Improved ROI from 2.1x to 4.7x',
+      'Increased conversion rate by 75%',
+      'Expanded target audience segments'
     ],
+    metrics: [
+      { label: 'Cost Per Result', value: '60%', icon: <FiTrendingUp />, description: 'Reduction in advertising costs' },
+      { label: 'Click-Through Rate', value: '2x', icon: <FiCheckCircle />, description: 'Increase with new creatives' },
+      { label: 'Return on Ad Spend', value: '4.7x', icon: <FiTrendingUp />, description: 'Improved from 2.1x' }
+    ],
+    testimonial: {
+      text: "Lynkz Agency's Facebook Ads expertise transformed our digital advertising. They not only reduced our costs but also significantly improved our campaign performance and ROI.",
+      author: 'Emily Rodriguez',
+      role: 'E-commerce Manager',
+      company: 'GreenSpark Retail'
+    },
     sections: [
       {
         title: 'The Challenge',
@@ -187,14 +291,33 @@ const educationalContent = {
     title: 'Mastering Calls to Action in Digital Marketing: Everything You Should Know',
     publishedDate: 'September 2023',
     readTime: '11 min read',
-    overview: 'We A/B tested CTA placement and copy across web and ads to maximize engagement and conversions.',
+    overview: 'Comprehensive guide to creating high-converting CTAs across all digital channels through A/B testing and data-driven optimization.',
     client: 'EngageNow Media',
     category: 'Conversion Rate Optimization',
+    industry: 'Digital Marketing Agency',
+    duration: '6 Weeks',
+    teamSize: '3 Specialists',
+    technologies: ['Google Optimize', 'Hotjar', 'Google Analytics', 'VWO'],
+    challenge: 'EngageNow Media was experiencing low conversion rates across their digital properties, with CTAs underperforming industry benchmarks and failing to drive the desired user actions.',
+    solution: 'We conducted a comprehensive CTA optimization program that included A/B testing of button designs, placements, and messaging across all digital touchpoints, supported by heatmaps and user session recordings to understand user behavior.',
     results: [
       'CTA click-through rate increased by 88%',
       'Landing page conversions up 47%',
-      'Email CTR improved by 39%'
+      'Email CTR improved by 39%',
+      'Reduced bounce rate by 32%',
+      'Increased average order value by 22%'
     ],
+    metrics: [
+      { label: 'CTR Improvement', value: '88%', icon: <FiTrendingUp />, description: 'Increase in click-through rates' },
+      { label: 'Conversion Lift', value: '47%', icon: <FiCheckCircle />, description: 'Increase in landing page conversions' },
+      { label: 'Email CTR', value: '39%', icon: <FiTrendingUp />, description: 'Improvement in email click rates' }
+    ],
+    testimonial: {
+      text: "The CTA optimization work by Lynkz Agency delivered exceptional results across all our digital channels. Their data-driven approach and attention to detail significantly improved our conversion metrics.",
+      author: 'David Kim',
+      role: 'Head of Digital',
+      company: 'EngageNow Media'
+    },
     sections: [
       {
         title: 'The Challenge',
@@ -246,190 +369,343 @@ const educationalContent = {
     title: 'How Data Analytics Drives Strategic Business Growth',
     publishedDate: 'October 2023',
     readTime: '12 min read',
-    overview: 'Using data dashboards and insights to guide decision-making, improve marketing ROI, and optimize customer experience.',
-    client: 'BrightMetrics Inc.',
-    category: 'Data Analytics',
+    challenge: 'BrightMetrics Inc. was drowning in data but lacked actionable insights, with decision-making slowed by siloed information and no unified view of customer behavior across touchpoints.',
+    solution: 'We implemented a comprehensive data analytics framework that included data integration, custom dashboard development, and predictive analytics to provide real-time insights and actionable recommendations across the organization.',
     results: [
       'Visualized performance across 10 departments',
       'Cut churn by 23% through data-led interventions',
-      'Boosted customer retention by 18%'
+      'Boosted customer retention by 18%',
+      'Reduced time-to-insight by 65%',
+      'Increased data-driven decision making by 80%'
     ],
+    metrics: [
+      { label: 'Customer Churn', value: '23%', icon: <FiTrendingUp />, description: 'Reduction in customer churn' },
+      { label: 'Retention Rate', value: '18%', icon: <FiCheckCircle />, description: 'Improvement in customer retention' },
+      { label: 'Time-to-Insight', value: '65%', icon: <FiClock />, description: 'Reduction in analysis time' }
+    ],
+    testimonial: {
+      text: "The data analytics transformation led by Lynkz Agency has been revolutionary for our business. We now have clear visibility into our operations and customer behavior, enabling us to make informed decisions that drive growth.",
+      author: 'Alex Thompson',
+      role: 'Director of Analytics',
+      company: 'BrightMetrics Inc.'
+    },
+    overview: 'Leveraging data analytics to inform business decisions and drive sustainable growth.',
+    client: 'BrightMetrics Inc.',
+    category: 'Data Analytics',
+    industry: 'SaaS',
+    duration: '3 Months',
+    teamSize: '4 Data Specialists',
+    technologies: ['Tableau', 'Google Data Studio', 'Segment', 'Amplitude', 'SQL'],
     sections: [
       {
         title: 'The Challenge',
         content: [
-          'BrightMetrics Inc. was collecting vast amounts of data but struggling to derive actionable insights. Different departments were using disparate systems, making it difficult to get a unified view of performance.',
-          'The challenge was to implement a comprehensive data analytics solution that would provide clear insights and drive strategic decision-making.'
+          'BrightMetrics Inc. was collecting vast amounts of data but struggling to turn it into actionable insights. Their data was siloed across different departments, making it difficult to get a complete picture of business performance or customer behavior.',
+          'The lack of a unified data strategy was leading to missed opportunities and inefficient decision-making processes.'
         ]
       },
       {
         title: 'Our Approach',
         content: [
-          'We developed a custom data analytics framework with the following components:',
-          '1. Data integration and centralization\n2. Custom dashboard development\n3. Predictive analytics implementation\n4. Team training and enablement'
+          'We implemented a comprehensive data analytics strategy with three key components:',
+          '1. Data integration and centralization\n2. Custom dashboard development\n3. Predictive analytics implementation'
         ],
         checklist: [
           'Consolidated data from 15+ sources into a single data warehouse',
-          'Created department-specific dashboards with KPIs',
-          'Implemented predictive churn modeling',
-          'Developed automated reporting system',
-          'Conducted training sessions for all teams'
+          'Created department-specific dashboards with key metrics',
+          'Developed predictive models for customer churn and lifetime value',
+          'Established data governance and quality standards',
+          'Trained teams on data interpretation and utilization'
         ]
       },
       {
         title: 'The Results',
         content: [
-          'The data analytics implementation transformed how BrightMetrics made decisions:',
-          '• 23% reduction in customer churn\n• 18% improvement in customer retention\n• 30% faster decision-making process\n• 40% reduction in time spent on manual reporting'
+          'The data analytics transformation delivered significant business impact:',
+          '• 23% reduction in customer churn through predictive modeling\n• 18% increase in customer retention\n• 65% faster time-to-insight with automated reporting\n• 80% increase in data-driven decision making'
         ],
         tips: [
           'Start with clear business questions before diving into data',
-          'Ensure data quality before analysis',
-          'Create self-serve dashboards for different teams',
-          'Regularly review and update your analytics framework'
+          'Focus on actionable insights, not just interesting data points',
+          'Make data accessible to all relevant teams',
+          'Continuously refine models based on new data and feedback'
         ]
       }
     ],
     keyTakeaways: [
-      'Data-driven decisions lead to better business outcomes',
-      'Visual dashboards improve data accessibility across teams',
-      'Predictive analytics can help anticipate and prevent churn'
+      'Data-driven companies are 23x more likely to acquire customers',
+      'Organizations using data analytics see 8% higher profitability',
+      'Businesses that leverage data are 3x more likely to improve decision-making'
     ],
     relatedArticles: [
       { title: 'Building a Data-Driven Culture', link: '/data-driven-culture' },
-      { title: 'Advanced Data Visualization Techniques', link: '/data-visualization' }
+      { title: 'Predictive Analytics for Business Growth', link: '/predictive-analytics' }
     ]
   }
 };
 
-const EducationalArticle: React.FC = () => {
+const CaseStudyDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   
-  const article = educationalContent[id as keyof typeof educationalContent];
+  const caseStudy = id ? caseStudyData[id] : null;
 
-  if (!article) {
+  if (!caseStudy) {
     return (
       <div className={styles.notFound}>
-        <h2>Article Not Found</h2>
-        <button onClick={() => navigate('/resources')} className={styles.backButton}>
-          <FiArrowLeft /> Back to Resources
+        <h2>Case Study Not Found</h2>
+        <p>The requested case study could not be found.</p>
+        <button onClick={() => navigate('/case-studies')} className={styles.backButton}>
+          <FiArrowLeft /> Back to Case Studies
         </button>
       </div>
     );
   }
 
+  // Get portfolio images from the Portfolio page data
+  const portfolioImages = [
+    { id: 1, image: '/port1.png', title: 'Nova Financial', link: '/portfolio/nova-financial' },
+    { id: 2, image: '/port2.png', title: 'Pulse Fitness', link: '/portfolio/pulse-fitness' },
+    { id: 3, image: '/port3.png', title: 'EcoHarvest', link: '/portfolio/ecoharvest' },
+    { id: 4, image: '/port4.png', title: 'Wanderlust Travel', link: '/portfolio/wanderlust-travel' }
+  ];
+
+  // Get latest case studies for the articles section
+  const latestArticles = Object.values(caseStudyData)
+    .filter(study => study.id !== id) // Exclude current case study
+    .sort((a, b) => new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime()) // Sort by date
+    .slice(0, 3) // Get 3 most recent
+    .map(study => ({
+      title: study.title,
+      date: study.publishedDate,
+      link: `/case-studies/${study.id}`
+    }));
+
+  // Social media links with icons and platform data
+  const socialLinks = [
+    { icon: FaFacebookF, url: '#', label: 'Facebook', platform: 'facebook' },
+    { icon: FaTwitter, url: '#', label: 'Twitter', platform: 'twitter' },
+    { icon: FaLinkedinIn, url: '#', label: 'LinkedIn', platform: 'linkedin' },
+    { icon: FaInstagram, url: '#', label: 'Instagram', platform: 'instagram' },
+    { icon: FaYoutube, url: '#', label: 'YouTube', platform: 'youtube' }
+  ];
+
   return (
-    <div className={styles.educationalArticle}>
-      {/* Hero Section */}
-      <section className={styles.articleHeader}>
-        <div className={styles.container}>
-          <button onClick={() => navigate('/resources')} className={styles.backButton}>
-            <FiArrowLeft /> Back to Resources
+    <motion.div 
+      className={styles.caseStudyDetail}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <div className={styles.caseStudyContainer}>
+        <main className={styles.mainContent}>
+          <button onClick={() => navigate(-1)} className={styles.backButton}>
+            <FiArrowLeft /> Back to Case Studies
           </button>
-          
-          <div className={styles.headerContent}>
-            <h1 className={styles.title}>{article.title}</h1>
+
+          <header className={styles.header}>
+            <span className={styles.category}>{caseStudy.category}</span>
+            <h1 className={styles.title}>{caseStudy.title}</h1>
             <div className={styles.meta}>
-              <span className={styles.date}>{article.publishedDate}</span>
-              <span className={styles.readTime}>{article.readTime}</span>
+              <span className={styles.date}><FiClock /> {caseStudy.readTime}</span>
+              <span className={styles.publishedDate}>{caseStudy.publishedDate}</span>
             </div>
-            <p className={styles.overview}>{article.overview}</p>
+          </header>
+
+      <div className={styles.overview}>
+        <h2>Overview</h2>
+        <p>{caseStudy.overview}</p>
+        
+        <div className={styles.stats}>
+          {caseStudy.industry && (
+            <div className={styles.stat}>
+              <h3>Industry</h3>
+              <p>{caseStudy.industry}</p>
+            </div>
+          )}
+          {caseStudy.duration && (
+            <div className={styles.stat}>
+              <h3>Duration</h3>
+              <p>{caseStudy.duration}</p>
+            </div>
+          )}
+          {caseStudy.teamSize && (
+            <div className={styles.stat}>
+              <h3>Team</h3>
+              <p>{caseStudy.teamSize}</p>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div className={styles.challenge}>
+        <h2>The Challenge</h2>
+        <p>{caseStudy.challenge}</p>
+      </div>
+
+      <div className={styles.solution}>
+        <h2>Our Solution</h2>
+        <p>{caseStudy.solution}</p>
+      </div>
+
+      {caseStudy.metrics && caseStudy.metrics.length > 0 && (
+        <div className={styles.metrics}>
+          <h2>Key Results</h2>
+          <div className={styles.metricsGrid}>
+            {caseStudy.metrics.map((metric, index) => (
+              <div key={index} className={styles.metricCard}>
+                <div className={styles.metricIcon}>{metric.icon}</div>
+                <h3>{metric.label}</h3>
+                <p className={styles.metricValue}>{metric.value}</p>
+                {metric.description && (
+                  <p className={styles.metricDescription}>{metric.description}</p>
+                )}
+              </div>
+            ))}
           </div>
         </div>
-      </section>
+      )}
 
-      {/* Article Content */}
-      <section className={styles.articleBody}>
-        <div className={styles.container}>
-          {article.sections.map((section, index) => (
-            <div key={index} className={styles.section}>
-              <h2 className={styles.sectionTitle}>{section.title}</h2>
-              
-              {section.content.map((paragraph, pIndex) => (
-                <p key={pIndex} className={styles.paragraph}>{paragraph}</p>
-              ))}
-              
-              {section.tips && (
-                <div className={styles.tipsBox}>
-                  <h3 className={styles.tipsTitle}>Actionable Tips:</h3>
-                  <ul className={styles.tipsList}>
-                    {section.tips.map((tip, tipIndex) => (
-                      <li key={tipIndex} className={styles.tipItem}>
-                        <span className={styles.tipIcon}>✓</span> {tip}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              
-              {section.checklist && (
-                <div className={styles.checklistBox}>
-                  <h3 className={styles.checklistTitle}>Audit Checklist:</h3>
-                  <ul className={styles.checklist}>
-                    {section.checklist.map((item, itemIndex) => (
-                      <li key={itemIndex} className={styles.checklistItem}>
-                        <input type="checkbox" id={`item-${itemIndex}`} />
-                        <label htmlFor={`item-${itemIndex}`}>{item}</label>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          ))}
+      {caseStudy.testimonial && (
+        <div className={styles.testimonial}>
+          <blockquote>
+            "{caseStudy.testimonial.text}"
+          </blockquote>
+          <div className={styles.testimonialAuthor}>
+            <strong>{caseStudy.testimonial.author}</strong>
+            <span>{caseStudy.testimonial.role}, {caseStudy.testimonial.company}</span>
+          </div>
         </div>
-      </section>
+      )}
 
-      {/* Key Takeaways */}
-      {article.keyTakeaways && (
-        <section className={styles.keyTakeaways}>
-          <div className={styles.container}>
-            <h2 className={styles.takeawaysTitle}>Key Takeaways</h2>
-            <ul className={styles.takeawaysList}>
-              {article.keyTakeaways.map((takeaway, index) => (
-                <li key={index} className={styles.takeawayItem}>
-                  <div className={styles.takeawayIcon}>★</div>
-                  <div className={styles.takeawayText}>{takeaway}</div>
+      {caseStudy.sections && caseStudy.sections.map((section, index) => (
+        <div key={index} className={styles.section}>
+          <h2>{section.title}</h2>
+          {section.content.map((paragraph, pIndex) => (
+            <p key={pIndex}>{paragraph}</p>
+          ))}
+          
+          {section.checklist && section.checklist.length > 0 && (
+            <div className={styles.checklist}>
+              <h4>Key Actions:</h4>
+              <ul>
+                {section.checklist.map((item, itemIndex) => (
+                  <li key={itemIndex}>
+                    <FiCheckCircle className={styles.checkIcon} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          
+          {section.tips && section.tips.length > 0 && (
+            <div className={styles.tips}>
+              <h4>Pro Tips:</h4>
+              <ul>
+                {section.tips.map((tip, tipIndex) => (
+                  <li key={tipIndex}>{tip}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      ))}
+
+      {caseStudy.keyTakeaways && caseStudy.keyTakeaways.length > 0 && (
+        <div className={styles.keyTakeaways}>
+          <h2>Key Takeaways</h2>
+          <ul>
+            {caseStudy.keyTakeaways.map((takeaway, index) => (
+              <li key={index}>{takeaway}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {caseStudy.relatedArticles && caseStudy.relatedArticles.length > 0 && (
+        <div className={styles.relatedArticles}>
+          <h2>Related Articles</h2>
+          <ul>
+            {caseStudy.relatedArticles.map((article, index) => (
+              <li key={index}>
+                <a href={article.link} className={styles.articleLink}>
+                  {article.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+        </main>
+
+        {/* Sidebar */}
+        <aside className={styles.sidebar}>
+          {/* Portfolio Gallery */}
+          <div className={styles.sidebarSection}>
+            <h3 className={styles.sectionTitle}>
+              <FiImage /> Portfolio
+            </h3>
+            <div className={styles.portfolioGallery}>
+              {portfolioImages.map((item) => (
+                <a 
+                  key={item.id} 
+                  href={item.link} 
+                  className={styles.portfolioImage}
+                  title={item.title}
+                >
+                  <img src={item.image} alt={item.title} />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Social Links */}
+          <div className={styles.sidebarSection}>
+            <h3 className={styles.sectionTitle}>
+              <FiShare2 /> Follow Us
+            </h3>
+            <div className={styles.socialLinks}>
+              {socialLinks.map((social, index) => {
+                const Icon = social.icon;
+                return (
+                  <a 
+                    key={index} 
+                    href={social.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className={styles.socialLink}
+                    aria-label={social.label}
+                    title={social.label}
+                    data-platform={social.platform}
+                  >
+                    <Icon />
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Latest Articles */}
+          <div className={styles.sidebarSection}>
+            <h3 className={styles.sectionTitle}>
+              <FiBookOpen /> Latest Articles
+            </h3>
+            <ul className={styles.latestArticles}>
+              {latestArticles.map((article, index) => (
+                <li key={index} className={styles.articleItem}>
+                  <Link to={article.link} className={styles.articleLink}>
+                    {article.title}
+                    <span className={styles.articleDate}>{article.date}</span>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
-        </section>
-      )}
-
-      {/* Related Articles */}
-      {article.relatedArticles && (
-        <section className={styles.relatedArticles}>
-          <div className={styles.container}>
-            <h2 className={styles.relatedTitle}>Continue Learning</h2>
-            <div className={styles.relatedGrid}>
-              {article.relatedArticles.map((related, index) => (
-                <div key={index} className={styles.relatedCard} onClick={() => navigate(related.link)}>
-                  <h3 className={styles.relatedCardTitle}>{related.title}</h3>
-                  <div className={styles.relatedArrow}>→</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* CTA Section */}
-      <section className={styles.articleCTA}>
-        <div className={styles.container}>
-          <h2 className={styles.ctaTitle}>Want to implement these strategies?</h2>
-          <p className={styles.ctaSubtitle}>Get professional guidance to maximize your results</p>
-          <button 
-            className={`${styles.ctaButton} ${styles.primary}`}
-            onClick={() => navigate('/contact')}
-          >
-            Schedule Consultation
-          </button>
-        </div>
-      </section>
-    </div>
+        </aside>
+      </div>
+    </motion.div>
   );
 };
 
-export default EducationalArticle;
+export default CaseStudyDetail;

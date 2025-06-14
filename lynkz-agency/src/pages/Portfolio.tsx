@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { FiFilter, FiX, FiExternalLink, FiGithub, FiArrowRight } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+import { FiArrowRight } from 'react-icons/fi';
 import styles from './Portfolio.module.css';
 
 // Portfolio data
@@ -222,7 +223,7 @@ const categories = [
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('all');
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [isFilterOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
   const [filteredProjects, setFilteredProjects] = useState(projects);
   
@@ -269,7 +270,7 @@ const Portfolio = () => {
             animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <h1 className={styles.heroTitle}>Our Portfolio</h1>
+            <h1 className={styles.heroTitle}>Our Creatives</h1>
             <p className={styles.heroSubtitle}>A showcase of our best work and successful projects</p>
           </motion.div>
         </div>
@@ -377,20 +378,20 @@ const Portfolio = () => {
           </AnimatePresence>
 
           {/* CTA Section */}
-          <section className="section cta bg-accent">
+          <section className={styles.ctaSection}>
             <div className="container">
               <motion.div 
-                className="cta-content text-center"
+                className={styles.ctaContent}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="cta-title">Have a project in mind?</h2>
-                <p className="cta-subtitle">Let's discuss how we can bring your ideas to life</p>
-                <a href="/contact" className="btn btn--dark" data-cursor-hover>
-                  Start a Project
-                </a>
+                <h2 className={styles.ctaTitle}>Have a project in mind?</h2>
+                <p className={styles.ctaSubtitle}>Let's discuss how we can bring your ideas to life</p>
+                <Link to="/contact" className={styles.ctaButton}>
+                  Start a Project <FiArrowRight className={styles.ctaIcon} />
+                </Link>
               </motion.div>
             </div>
           </section>
