@@ -1,8 +1,23 @@
 import { useState, useRef } from 'react';
-import { motion, useScroll, useTransform, useInView } from 'framer-motion';
-import { FiCheck, FiCode, FiLayers, FiSearch, FiDollarSign, FiShare2, FiPieChart, FiCamera, FiSmartphone, FiTrendingUp, FiAward, FiUsers, FiBarChart2, FiCheckCircle } from 'react-icons/fi';
-import { VscGraph } from "react-icons/vsc";
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
+import { 
+  FiCheck, 
+  FiCode, 
+  FiLayers, 
+  FiSearch, 
+  FiDollarSign, 
+  FiShare2, 
+  FiPieChart, 
+  FiCamera, 
+  FiSmartphone, 
+  FiTrendingUp, 
+  FiAward, 
+  FiUsers, 
+  FiBarChart2, 
+  FiCheckCircle 
+} from 'react-icons/fi';
 import styles from './Services.module.css';
+import { VscGraph } from 'react-icons/vsc';
 
 // Lynkz Agency Service data
 const services = [

@@ -101,7 +101,7 @@ const Footer: React.FC = () => {
               Where Creative Meets Conversion
             </p>
             <div className={styles.socialLinks}>
-              {socialLinks.map((social, index) => (
+              {socialLinks.map((social) => (
                 <motion.a
                   key={social.name}
                   href={social.url}

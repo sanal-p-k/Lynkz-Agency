@@ -1,11 +1,11 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FiArrowRight, FiCode, FiLayers, FiSearch } from 'react-icons/fi';
 import PortfolioSection from '../components/portfolio/PortfolioSection';
 import CaseStudySection from '../components/case-studies/CaseStudySection';
 import styles from './Home.module.css';
-import { VscGraph } from "react-icons/vsc";
+// React import not needed with new JSX transform
 
 // Mock data
 const services = [
@@ -48,7 +48,6 @@ const testimonials = [
 
 const Home = () => {
   const heroRef = useRef(null);
-  const isHeroInView = useInView(heroRef, { once: true, amount: 0.3 });
   const servicesRef = useRef(null);
   const isServicesInView = useInView(servicesRef, { once: true, amount: 0.1 });
   const testimonialsRef = useRef(null);
@@ -150,7 +149,7 @@ const Home = () => {
           <div className={styles.marqueeWrapper}>
             <div className={`${styles.marqueeTrack} ${styles.leftToRight} ${styles.strokeText}`}>
               {[...Array(3)].map((_, i) => (
-                <React.Fragment key={`stroke-${i}`}>
+                <div key={`stroke-${i}`}>
                   <span>Social Media Marketing</span>
                   <span className={styles.divider}>•</span>
                   <span>Web Development</span>
@@ -163,7 +162,7 @@ const Home = () => {
                   <span className={styles.divider}>•</span>
                   <span>Meta Ads</span>
                   <span className={styles.divider}>•</span>
-                </React.Fragment>
+                </div>
               ))}
             </div>
           </div>
@@ -171,7 +170,7 @@ const Home = () => {
           <div className={styles.marqueeWrapper}>
             <div className={`${styles.marqueeTrack} ${styles.rightToLeft} ${styles.solidText}`}>
               {[...Array(3)].map((_, i) => (
-                <React.Fragment key={`solid-${i}`}>
+                <div key={`solid-${i}`}>
                   <span>Search Engine Optimization</span>
                   <span className={styles.divider}>•</span>
                   <span>Content Creation</span>
@@ -182,7 +181,7 @@ const Home = () => {
                   <span className={styles.divider}>•</span>
                   <span>E-commerce Solutions</span>
                   <span className={styles.divider}>•</span>
-                </React.Fragment>
+                </div>
               ))}
             </div>
           </div>

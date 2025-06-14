@@ -223,7 +223,6 @@ const categories = [
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('all');
-  const [isFilterOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
   const [filteredProjects, setFilteredProjects] = useState(projects);
   
