@@ -614,7 +614,7 @@ const CaseStudyDetail: React.FC = () => {
 
       {caseStudy.keyTakeaways && caseStudy.keyTakeaways.length > 0 && (
         <div className={styles.keyTakeaways}>
-          <h2>Key Takeaways</h2>
+          <h2 style={{marginLeft:'2.5%'}}>Key Takeaways</h2>
           <ul>
             {caseStudy.keyTakeaways.map((takeaway, index) => (
               <li key={index}>{takeaway}</li>
