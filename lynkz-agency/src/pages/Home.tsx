@@ -32,10 +32,10 @@ const services = [
 const testimonials = [
   {
     id: 1,
-    name: 'John Doe',
-    role: 'CEO, TechCorp',
-    content: 'Lynkz transformed our online presence completely. Their creative approach and technical expertise are unmatched.',
-    avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
+    name: 'What The Data',
+    role: '',
+    content: 'Lynkz Agency brings the perfect balance of creativity and strategy. As WTD’s creative partner, they’ve helped us turn ideas into impactful brand experiences. Professional, bold, and always on point',
+    avatar: '/Clients/wtd.png',
   },
   {
     id: 2,
@@ -199,7 +199,7 @@ const Home = () => {
           <h3 className={styles.sectionSubtitle}>Trusted by Industry Leaders</h3>
           <div className={styles.logoTrack}>
             {[
-              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg',
+              '/Clients/wtd.png',
               'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg',
               'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazon/amazon-original.svg',
               'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg',
@@ -210,7 +210,7 @@ const Home = () => {
               'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/uber/uber-plain.svg',
               'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg',
               // Duplicate the logos to create a seamless loop
-              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg',
+              '/Clients/wtd.png',
               'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg',
               'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazon/amazon-original.svg',
               'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg',
