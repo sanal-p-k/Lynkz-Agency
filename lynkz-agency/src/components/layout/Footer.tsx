@@ -19,7 +19,7 @@ const socialLinks = [
   },
   {
     name: 'LinkedIn',
-    url: 'https://www.linkedin.com/company/lynkz-agency',
+    url: 'https://www.youtube.com/',
     icon: <i className="fa-brands fa-linkedin-in fa-xl"></i>,
   },
   {
