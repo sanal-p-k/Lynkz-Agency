@@ -464,10 +464,10 @@ const CaseStudyDetail: React.FC = () => {
 
   // Get portfolio images from the Portfolio page data
   const portfolioImages = [
-    { id: 1, image: '/port1.png', title: 'Nova Financial', link: '/portfolio/nova-financial' },
-    { id: 2, image: '/port2.png', title: 'Pulse Fitness', link: '/portfolio/pulse-fitness' },
-    { id: 3, image: '/port3.png', title: 'EcoHarvest', link: '/portfolio/ecoharvest' },
-    { id: 4, image: '/port4.png', title: 'Wanderlust Travel', link: '/portfolio/wanderlust-travel' }
+    { id: 1, image: '/port1.png', title: 'Nova Financial', link: '/portfolio' },
+    { id: 2, image: '/port2.png', title: 'Pulse Fitness', link: '/portfolio' },
+    { id: 3, image: '/port3.png', title: 'EcoHarvest', link: '/portfolio' },
+    { id: 4, image: '/port4.png', title: 'Wanderlust Travel', link: '/portfolio' }
   ];
 
   // Get latest case studies for the articles section
@@ -483,11 +483,10 @@ const CaseStudyDetail: React.FC = () => {
 
   // Social media links with icons and platform data
   const socialLinks = [
-    { icon: FaFacebookF, url: '#', label: 'Facebook', platform: 'facebook' },
-    { icon: FaTwitter, url: '#', label: 'Twitter', platform: 'twitter' },
-    { icon: FaLinkedinIn, url: '#', label: 'LinkedIn', platform: 'linkedin' },
-    { icon: FaInstagram, url: '#', label: 'Instagram', platform: 'instagram' },
-    { icon: FaYoutube, url: '#', label: 'YouTube', platform: 'youtube' }
+    { icon: FaFacebookF, url: 'https://www.facebook.com/profile.php?id=61575929790796', label: 'Facebook', platform: 'facebook' },
+    { icon: FaTwitter, url: 'https://x.com/LynkzAgency', label: 'Twitter', platform: 'twitter' },
+    { icon: FaLinkedinIn, url: 'https://www.linkedin.com/company/lynkz-agency/', label: 'LinkedIn', platform: 'linkedin' },
+    { icon: FaInstagram, url: 'https://www.instagram.com/lynkz_agency/', label: 'Instagram', platform: 'instagram' },
   ];
 
   return (

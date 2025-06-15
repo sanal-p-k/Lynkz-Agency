@@ -8,7 +8,7 @@
 .hero {
   padding: 10rem 0 6rem;
   text-align: center;
-  background: 
+  background:
     linear-gradient(rgba(10, 10, 10, 0.9), rgba(26, 26, 26, 0.85)),
     url('/images/contact.jpg') center/cover no-repeat fixed;
   position: relative;
@@ -235,7 +235,7 @@
     max-width: 100%;
     padding: 0 1.5rem;
   }
-  
+
   .contactInfoCard {
     padding: 2rem 1.25rem;
   }
@@ -247,19 +247,19 @@
     max-width: 500px;
     gap: 1.25rem;
   }
-  
+
   .contactInfoCard {
     display: flex;
     align-items: center;
     text-align: left;
     padding: 1.5rem;
   }
-  
+
   .contactIcon {
     margin: 0 1.5rem 0 0;
     flex-shrink: 0;
   }
-  
+
   .contactTitle::after {
     left: 0;
     transform: none;
@@ -291,7 +291,7 @@
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  background: linear-gradient(90deg, #fff, #8a2be2, #00f7ff);
+  background: linear-gradient(90deg, #fff);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -539,7 +539,7 @@ textarea.formControl {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .mapContainer {
     height: 400px;
   }
@@ -549,11 +549,11 @@ textarea.formControl {
   .heroTitle {
     font-size: 2.5rem;
   }
-  
+
   .heroSubtitle {
     font-size: 1.1rem;
   }
-  
+
   .contactInfoGrid {
     grid-template-columns: 1fr 1fr;
   }
@@ -563,19 +563,19 @@ textarea.formControl {
   .hero {
     padding: 6rem 0 3rem;
   }
-  
+
   .heroTitle {
     font-size: 2rem;
   }
-  
+
   .contactInfoGrid {
     grid-template-columns: 1fr;
   }
-  
+
   .contactFormContainer {
     padding: 1.5rem;
   }
-  
+
   .sectionTitle {
     font-size: 1.75rem;
   }

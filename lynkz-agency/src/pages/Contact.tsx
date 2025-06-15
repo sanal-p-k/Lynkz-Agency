@@ -6,11 +6,6 @@ import {
   FiClock, 
   FiCheck, 
   FiX, 
-  FiTwitter, 
-  FiLinkedin, 
-  FiInstagram, 
-  FiGithub, 
-  FiDribbble,
   FiSend,
   FiArrowRight
 } from 'react-icons/fi';
@@ -91,31 +86,26 @@ const Contact: React.FC = () => {
 
   // Social media links
   const socialLinks: SocialLink[] = [
-    { 
-      name: 'Twitter', 
-      url: 'https://twitter.com/lynkz',
-      icon: <FiTwitter />
-    },
-    { 
-      name: 'LinkedIn', 
-      url: 'https://linkedin.com/company/lynkz',
-      icon: <FiLinkedin />
-    },
-    { 
-      name: 'Instagram', 
-      url: 'https://instagram.com/lynkz',
-      icon: <FiInstagram />
-    },
-    { 
-      name: 'GitHub', 
-      url: 'https://github.com/lynkz',
-      icon: <FiGithub />
-    },
-    { 
-      name: 'Dribbble', 
-      url: 'https://dribbble.com/lynkz',
-      icon: <FiDribbble />
-    }
+    {
+    name: 'Instagram',
+    url: 'https://www.instagram.com/lynkz_agency/',
+    icon: <i className="fa-brands  fa-instagram"></i>,
+  },
+  {
+    name: 'X (Twitter)',
+    url: 'https://x.com/LynkzAgency',
+    icon: <i className="fa-brands  fa-x-twitter"></i>,
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/company/lynkz-agency/',
+    icon: <i className="fa-brands fa-linkedin-in "></i>,
+  },
+  {
+    name: 'Facebook',
+    url: 'https://www.facebook.com/profile.php?id=61575929790796',
+    icon: <i className="fa-brands  fa-facebook-f"></i>,
+  },
   ];
 
   // Handle form input changes

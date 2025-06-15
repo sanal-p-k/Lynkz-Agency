@@ -51,7 +51,7 @@ const CaseStudySection = () => {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.4 }}
                 />
-                <span className={styles.categoryTag}>{study.category}</span>
+                {/* <span className={styles.categoryTag}>{study.category}</span> */}
               </div>
               <div className={styles.caseStudyContent}>
                 <h3 className={styles.cardTitle}>{study.title}</h3>

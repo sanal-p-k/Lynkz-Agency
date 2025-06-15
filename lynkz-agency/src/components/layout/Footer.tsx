@@ -9,22 +9,22 @@ import styles from './Footer.module.css';
 const socialLinks = [
   {
     name: 'Instagram',
-    url: 'https://www.instagram.com/lynkz.agency',
+    url: 'https://www.instagram.com/lynkz_agency/',
     icon: <i className="fa-brands fa-xl fa-instagram"></i>,
   },
   {
     name: 'X (Twitter)',
-    url: 'https://x.com/lynkz_agency',
+    url: 'https://x.com/LynkzAgency',
     icon: <i className="fa-brands fa-xl fa-x-twitter"></i>,
   },
   {
     name: 'LinkedIn',
-    url: 'https://www.linkedin.com/company/lynkz-agency',
+    url: 'https://www.linkedin.com/company/lynkz-agency/',
     icon: <i className="fa-brands fa-linkedin-in fa-xl"></i>,
   },
   {
     name: 'Facebook',
-    url: 'https://www.facebook.com/lynkz.agency',
+    url: 'https://www.facebook.com/profile.php?id=61575929790796',
     icon: <i className="fa-brands fa-xl fa-facebook-f"></i>,
   },
 
@@ -52,8 +52,8 @@ const serviceLinks = [
 const contactInfo = [
   { 
     icon: <FiMail aria-hidden="true" />, 
-    text: 'hello@lynkz.agency',
-    url: 'mailto:hello@lynkz.agency'
+    text: 'lynkzagency@gmail.com',
+    url: 'mailto:lynkzagency@gmail.com'
   },
   { 
     icon: <FiPhone aria-hidden="true" />, 

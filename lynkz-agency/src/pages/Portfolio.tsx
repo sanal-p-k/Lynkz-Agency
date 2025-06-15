@@ -157,7 +157,7 @@ const projects = [
       { label: 'Customer Delight', value: '4.8/5', description: 'Packaging rating' },
       { label: 'Social Shares', value: '25k+', description: 'On social media' }
     ],
-    link: '#',
+    link: 'bloom',
     featured: true
   },
   {

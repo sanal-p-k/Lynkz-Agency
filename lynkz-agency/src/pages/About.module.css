@@ -28,7 +28,7 @@
   line-height: 1.1;
   margin: 0;
   color: #fff;
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: 2px;
   position: relative;
   display: inline-block;
