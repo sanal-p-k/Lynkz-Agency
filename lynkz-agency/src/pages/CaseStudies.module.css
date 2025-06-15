@@ -13,7 +13,7 @@
   text-align: center;
   background: 
     linear-gradient(rgba(10, 10, 10, 0.9), rgba(26, 26, 26, 0.85)),
-    url('/images/our_services.jpg') center/cover no-repeat fixed;
+    url('/images/case_study.jpg') center/cover no-repeat fixed;
   overflow: hidden;
   color: white;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);

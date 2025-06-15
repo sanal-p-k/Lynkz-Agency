@@ -153,7 +153,7 @@ const Services = () => {
       <div 
         className={styles.heroSection}
         style={{ 
-          backgroundImage: 'url(/images/our_services.jpg)' // Replace with your image path
+          backgroundImage: 'url(/images/services.jpg)' // Replace with your image path
         }}
       >
         <div className={styles.heroOverlay}></div>

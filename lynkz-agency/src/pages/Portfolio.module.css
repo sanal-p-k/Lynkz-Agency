@@ -11,7 +11,7 @@
   text-align: center;
   background: 
     linear-gradient(rgba(10, 10, 10, 0.9), rgba(26, 26, 26, 0.85)),
-    url('/images/our_services.jpg') center/cover no-repeat fixed;
+    url('/images/portfolio.jpg') center/cover no-repeat fixed;
   position: relative;
   overflow: hidden;
   color: white;
