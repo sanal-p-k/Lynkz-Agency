@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { FiArrowLeft, FiClock, FiUsers, FiCheckCircle, FiTrendingUp, FiAward, FiImage, FiShare2, FiBookOpen } from 'react-icons/fi';
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import styles from './CaseStudyDetail.module.css';
 
