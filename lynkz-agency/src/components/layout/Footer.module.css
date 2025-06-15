@@ -176,7 +176,7 @@
 
 .linksList a:hover,
 .linksList a:focus {
-  color: var(--accent);
+  color: var(--color-accent);
   outline: none;
 }
 
@@ -222,7 +222,7 @@
 
 .legal a:hover,
 .legal a:focus {
-  color: var(--accent);
+  color: var(--color-accent);
   outline: none;
 }
 

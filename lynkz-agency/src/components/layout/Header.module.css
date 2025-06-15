@@ -199,7 +199,7 @@
 
 .navLink:hover,
 .navLink:focus {
-  color: var(--accent);
+  color: var(--color-accent);
   outline: none;
 }
 
