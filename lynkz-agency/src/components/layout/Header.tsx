@@ -25,7 +25,7 @@ const Header: React.FC = () => {
     { to: '/about', label: 'Behind Lynkz' },
     { to: '/services', label: 'Solutions we Lynk' },
     {
-      to: '',
+      to: '#',
       label: 'Lynkz in Action',
       children: [
         { to: '/portfolio', label: 'Portfolio' },
@@ -121,7 +121,7 @@ const Header: React.FC = () => {
 
                   {/* Dropdown if there are children */}
                   {link.children && (
-                    <ul className={`${isScrolled ? styles.dropdownScrolled : styles.dropdown }`}>
+                    <ul className={`${isScrolled ? styles.dropdownScrolled : styles.dropdown}`}>
                       {link.children.map((child) => (
                         <li key={child.to}>
                           <Link to={child.to} className={styles.dropdownLink}>
@@ -171,13 +171,27 @@ const Header: React.FC = () => {
 
                 return (
                   <div key={link.to} className={styles.mobileNavItem}>
-                    <Link to={link.to}
-                      className={`${styles.mobileNavLink} ${isActive ? styles.mobileNavLinkActive : ''}`}
-                      onClick={() => (hasDropdown ? toggleDropdown(link.label) : closeMenu())}
-                      aria-current={isActive ? 'page' : undefined}
-                    >
-                      {link.label}
-                    </Link>
+                    {hasDropdown ? (
+                      <button
+                        type="button"
+                        onClick={() => toggleDropdown(link.label)}
+                        className={`${styles.mobileNavLink} ${activeDropdown === link.label ? styles.mobileNavLinkActive : ''}`}
+                        aria-expanded={activeDropdown === link.label}
+                        aria-controls={`dropdown-${link.label}`}
+                      >
+                        {link.label}
+                      </button>
+                    ) : (
+                      <Link
+                        to={link.to}
+                        className={`${styles.mobileNavLink} ${isActive ? styles.mobileNavLinkActive : ''}`}
+                        onClick={closeMenu}
+                        aria-current={isActive ? 'page' : undefined}
+                      >
+                        {link.label}
+                      </Link>
+                    )}
+
 
                     {hasDropdown && activeDropdown === link.label && (
                       <div className={styles.mobileDropdown}>

@@ -1,6 +1,6 @@
 import React from 'react';
-import {  FiLinkedin,  FiMail, FiPhone, FiMapPin, FiClock, FiInstagram,  FiFacebook } from 'react-icons/fi';
-import { FaXTwitter } from 'react-icons/fa6';
+import { FiMail, FiPhone, FiMapPin, FiClock } from 'react-icons/fi';
+
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
@@ -10,22 +10,22 @@ const socialLinks = [
   {
     name: 'Instagram',
     url: 'https://www.instagram.com/lynkz.agency',
-    icon: <FiInstagram className="social-icon" size={20} aria-hidden="true" />,
+    icon: <i className="fa-brands fa-xl fa-instagram"></i>,
   },
   {
     name: 'X (Twitter)',
     url: 'https://x.com/lynkz_agency',
-    icon: <FaXTwitter className="social-icon" size={20} aria-hidden="true" />,
+    icon: <i className="fa-brands fa-xl fa-x-twitter"></i>,
   },
   {
     name: 'LinkedIn',
-    url: 'https://www.youtube.com/',
+    url: 'https://www.linkedin.com/company/lynkz-agency',
     icon: <i className="fa-brands fa-linkedin-in fa-xl"></i>,
   },
   {
     name: 'Facebook',
     url: 'https://www.facebook.com/lynkz.agency',
-    icon: <FiFacebook className="social-icon" size={20} aria-hidden="true" />,
+    icon: <i className="fa-brands fa-xl fa-facebook-f"></i>,
   },
 
 ];
