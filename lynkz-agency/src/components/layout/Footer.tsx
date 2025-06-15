@@ -20,7 +20,7 @@ const socialLinks = [
   {
     name: 'LinkedIn',
     url: 'https://www.linkedin.com/company/lynkz-agency',
-    icon: <FiLinkedin className="social-icon" size={20} aria-hidden="true" />,
+    icon: <i className="fa-brands fa-linkedin-in fa-xl"></i>,
   },
   {
     name: 'Facebook',
