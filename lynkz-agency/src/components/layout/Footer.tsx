@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiMail, FiPhone, FiMapPin, FiClock } from 'react-icons/fi';
+import { FiMail, FiPhone, FiClock } from 'react-icons/fi';
 
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
