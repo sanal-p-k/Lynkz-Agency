@@ -39,10 +39,10 @@ const testimonials = [
   },
   {
     id: 2,
-    name: 'Jane Smith',
-    role: 'Marketing Director, BrandCo',
-    content: 'Working with Lynkz was a game-changer for our brand. They delivered beyond our expectations.',
-    avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
+    name: 'Hike HR Solutions',
+    role: '',
+    content: 'Lynkz Agency has been a game-changer for our brand. They delivered beyond our expectations.',
+    avatar: '',
   },
 ];
 
@@ -204,11 +204,6 @@ const Home = () => {
               'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazon/amazon-original.svg',
               'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg',
               'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spotify/spotify-original.svg',
-              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg',
-              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/airbnb/airbnb-original.svg',
-              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netflix/netflix-original.svg',
-              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/uber/uber-plain.svg',
-              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg',
               // Duplicate the logos to create a seamless loop
               '/Clients/wtd.png',
               'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg',

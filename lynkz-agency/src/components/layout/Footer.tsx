@@ -57,14 +57,14 @@ const contactInfo = [
   },
   { 
     icon: <FiPhone aria-hidden="true" />, 
-    text: '+1 (555) 123-4567',
-    url: 'tel:+15551234567'
+    text: '+91 9497684728',
+    url: 'tel:+91 9497684728'
   },
-  { 
-    icon: <FiMapPin aria-hidden="true" />, 
-    text: '123 Creative St, Tech City',
-    url: 'https://maps.google.com?q=123+Creative+St+Tech+City+CA+94103+USA'
-  },
+  // { 
+  //   icon: <FiMapPin aria-hidden="true" />, 
+  //   text: '123 Creative St, Tech City',
+  //   url: 'https://maps.google.com?q=123+Creative+St+Tech+City+CA+94103+USA'
+  // },
   { 
     icon: <FiClock aria-hidden="true" />, 
     text: 'Mon - Fri: 9:00 - 18:00',

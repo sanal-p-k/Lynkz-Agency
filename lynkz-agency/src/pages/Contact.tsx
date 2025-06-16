@@ -66,15 +66,15 @@ const Contact: React.FC = () => {
     {
       icon: <FiMail className={styles.icon} />,
       title: 'Email Us',
-      description: 'hello@lynkz.agency',
-      link: 'mailto:hello@lynkz.agency',
+      description: 'lynkzagency@gmail.com',
+      link: 'mailto:lynkzagency@gmail.com',
     },
     {
       icon: <FiPhone className={styles.icon} />,
       title: 'Call Us',
-      description: '+1 (555) 123-4567',
+      description: '+91 9497684728',
       description2: 'Mon - Fri, 9:00 - 18:00',
-      link: 'tel:+15551234567',
+      link: 'tel:+91 9497684728',
     },
     {
       icon: <FiClock className={styles.icon} />,
