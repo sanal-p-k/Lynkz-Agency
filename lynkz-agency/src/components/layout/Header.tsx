@@ -123,7 +123,7 @@ const Header: React.FC = () => {
                   {link.children && (
                     <ul className={`${isScrolled ? styles.dropdownScrolled : styles.dropdown}`}>
                       {link.children.map((child) => (
-                        <li key={child.to}>
+                        <li key={child.to} className={styles.dropitem}>
                           <Link to={child.to} className={styles.dropdownLink}>
                             {child.label}
                           </Link>

@@ -93,7 +93,9 @@
   display: block;
 } */
 
-
+.dropitem{
+  list-style-type: none;
+}
 
 .navItem:hover .dropdown {
   display: block;

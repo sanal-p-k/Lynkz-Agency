@@ -82,6 +82,7 @@ const Home = () => {
               <a
                 href="/Lynkz_Brochure.pdf"
                 target="_blank"
+                download={'/Pixalytica Profile.pdf'}
                 rel="noopener noreferrer"
                 className={styles.secondaryButton}
               >
@@ -148,46 +149,46 @@ const Home = () => {
 
       {/* Marquee Service Slider */}
       <section className={styles.marqueeSlider}>
-          <div className={styles.marqueeWrapper}>
-            <div className={`${styles.marqueeTrack} ${styles.leftToRight} ${styles.strokeText}`}>
-              {[...Array(3)].map((_, i) => (
-                <div key={`stroke-${i}`}>
-                  <span>Social Media Marketing</span>
-                  <span className={styles.divider}>•</span>
-                  <span>Web Development</span>
-                  <span className={styles.divider}>•</span>
-                  <span>Branding</span>
-                  <span className={styles.divider}>•</span>
-                  <span>Data Analytics</span>
-                  <span className={styles.divider}>•</span>
-                  <span>Google Ads</span>
-                  <span className={styles.divider}>•</span>
-                  <span>Meta Ads</span>
-                  <span className={styles.divider}>•</span>
-                </div>
-              ))}
-            </div>
+        <div className={styles.marqueeWrapper}>
+          <div className={`${styles.marqueeTrack} ${styles.leftToRight} ${styles.strokeText}`}>
+            {[...Array(3)].map((_, i) => (
+              <div key={`stroke-${i}`}>
+                <span>Social Media Marketing</span>
+                <span className={styles.divider}>•</span>
+                <span>Web Development</span>
+                <span className={styles.divider}>•</span>
+                <span>Branding</span>
+                <span className={styles.divider}>•</span>
+                <span>Data Analytics</span>
+                <span className={styles.divider}>•</span>
+                <span>Google Ads</span>
+                <span className={styles.divider}>•</span>
+                <span>Meta Ads</span>
+                <span className={styles.divider}>•</span>
+              </div>
+            ))}
           </div>
+        </div>
 
-          <div className={styles.marqueeWrapper}>
-            <div className={`${styles.marqueeTrack} ${styles.rightToLeft} ${styles.solidText}`}>
-              {[...Array(3)].map((_, i) => (
-                <div key={`solid-${i}`}>
-                  <span>Search Engine Optimization</span>
-                  <span className={styles.divider}>•</span>
-                  <span>Content Creation</span>
-                  <span className={styles.divider}>•</span>
-                  <span>Email Marketing</span>
-                  <span className={styles.divider}>•</span>
-                  <span>UI/UX Design</span>
-                  <span className={styles.divider}>•</span>
-                  <span>E-commerce Solutions</span>
-                  <span className={styles.divider}>•</span>
-                </div>
-              ))}
-            </div>
+        <div className={styles.marqueeWrapper}>
+          <div className={`${styles.marqueeTrack} ${styles.rightToLeft} ${styles.solidText}`}>
+            {[...Array(3)].map((_, i) => (
+              <div key={`solid-${i}`}>
+                <span>Search Engine Optimization</span>
+                <span className={styles.divider}>•</span>
+                <span>Content Creation</span>
+                <span className={styles.divider}>•</span>
+                <span>Email Marketing</span>
+                <span className={styles.divider}>•</span>
+                <span>UI/UX Design</span>
+                <span className={styles.divider}>•</span>
+                <span>E-commerce Solutions</span>
+                <span className={styles.divider}>•</span>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
 
       {/* Portfolio Section */}
@@ -200,19 +201,18 @@ const Home = () => {
           <div className={styles.logoTrack}>
             {[
               '/Clients/wtd.png',
-              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg',
-              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazon/amazon-original.svg',
+              '/Clients/pkdoorbg.png',
+              '/Clients/ZARAS LOGO.png',
               'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg',
-              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spotify/spotify-original.svg',
-              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg',
-              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/airbnb/airbnb-original.svg',
-              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netflix/netflix-original.svg',
-              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/uber/uber-plain.svg',
-              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg',
+              'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-original.svg',
+              'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg',
+              'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+              'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unrealengine/unrealengine-original.svg',
+              'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/yarn/yarn-original.svg',
               // Duplicate the logos to create a seamless loop
               '/Clients/wtd.png',
-              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg',
-              'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazon/amazon-original.svg',
+              'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg',
+              'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg',
               'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg',
               'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spotify/spotify-original.svg',
             ].map((logo, index) => (

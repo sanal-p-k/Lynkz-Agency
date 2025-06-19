@@ -50,26 +50,17 @@ const serviceLinks = [
 
 // Contact info
 const contactInfo = [
-  { 
-    icon: <FiMail aria-hidden="true" />, 
+  {
+    icon: <FiMail aria-hidden="true" />,
     text: 'lynkzagency@gmail.com',
     url: 'mailto:lynkzagency@gmail.com'
   },
-  { 
-    icon: <FiPhone aria-hidden="true" />, 
+  {
+    icon: <FiPhone aria-hidden="true" />,
     text: '+1 (555) 123-4567',
     url: 'tel:+15551234567'
   },
-  { 
-    icon: <FiMapPin aria-hidden="true" />, 
-    text: '123 Creative St, Tech City',
-    url: 'https://maps.google.com?q=123+Creative+St+Tech+City+CA+94103+USA'
-  },
-  { 
-    icon: <FiClock aria-hidden="true" />, 
-    text: 'Mon - Fri: 9:00 - 18:00',
-    text2: 'Sat - Sun: Closed'
-  },
+
 ];
 
 // Legal links
@@ -87,7 +78,7 @@ const Footer: React.FC = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           {/* Brand Section */}
-          <motion.div 
+          <motion.div
             className={`${styles.brand} ${styles.animateIn}`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -122,7 +113,7 @@ const Footer: React.FC = () => {
           {/* Links Section */}
           <div className={styles.links}>
             {/* Navigation Links */}
-            <motion.div 
+            <motion.div
               className={`${styles.linksColumn} ${styles.animateIn}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -142,7 +133,7 @@ const Footer: React.FC = () => {
             </motion.div>
 
             {/* Services Links */}
-            <motion.div 
+            <motion.div
               className={`${styles.linksColumn} ${styles.animateIn}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -162,7 +153,7 @@ const Footer: React.FC = () => {
             </motion.div>
 
             {/* Contact Info */}
-            <motion.div 
+            <motion.div
               className={`${styles.linksColumn} ${styles.animateIn}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -173,12 +164,12 @@ const Footer: React.FC = () => {
               <ul className={styles.linksList}>
                 {contactInfo.map((item, index) => (
                   <li key={index} className={styles.contactItem}>
-                    <div className={styles.contactIcon}>{item.icon}</div>
-                    <div>
+                    <div className={styles.contactRow}>
+                      <div className={styles.contactIcon}>{item.icon}</div>
                       {item.url ? (
-                        <a 
-                          href={item.url} 
-                          target="_blank" 
+                        <a
+                          href={item.url}
+                          target="_blank"
                           rel="noopener noreferrer"
                           className={styles.contactLink}
                         >
@@ -187,7 +178,6 @@ const Footer: React.FC = () => {
                       ) : (
                         <span>{item.text}</span>
                       )}
-                      {item.text2 && <div className={styles.contactText2}>{item.text2}</div>}
                     </div>
                   </li>
                 ))}
@@ -197,7 +187,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <motion.div 
+        <motion.div
           className={`${styles.bottomBar} ${styles.animateIn}`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -207,7 +197,7 @@ const Footer: React.FC = () => {
           <p className={styles.copyright}>
             &copy; {currentYear} Lynkz. All rights reserved.
           </p>
-          
+
           <div className={styles.legal}>
             {legalLinks.map((link, index) => (
               <React.Fragment key={link.to}>

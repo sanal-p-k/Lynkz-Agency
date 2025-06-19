@@ -180,6 +180,13 @@
   outline: none;
 }
 
+.contactRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
 /* Bottom Bar */
 .bottomBar {
   border-top: 1px solid var(--border-color);
