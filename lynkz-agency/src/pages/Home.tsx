@@ -46,6 +46,15 @@ const testimonials = [
   },
 ];
 
+const logos = [
+  '/Clients/wtd.png',
+  '/Clients/pkdoorbg.png',
+  '/Clients/ZARAS LOGO.png',
+];
+
+// Multiply the array by 3x
+const repeatedLogos = [...logos, ...logos, ...logos];
+
 const Home = () => {
   const heroRef = useRef(null);
   const servicesRef = useRef(null);
@@ -199,21 +208,9 @@ const Home = () => {
         <div className="container">
           <h3 className={styles.sectionSubtitle}>Trusted by Industry Leaders</h3>
           <div className={styles.logoTrack}>
-            {[
-              '/Clients/wtd.png',
-              '/Clients/pkdoorbg.png',
-              '/Clients/ZARAS LOGO.png',
-             
-              // Duplicate the logos to create a seamless loop
-              '/Clients/wtd.png',
-              
-            ].map((logo, index) => (
+            {repeatedLogos.map((logo, index) => (
               <div key={index} className={styles.logoSlide}>
-                <img
-                  src={logo}
-                  alt={`Client Logo ${index + 1}`}
-                  loading="lazy"
-                />
+                <img src={logo} alt={`Client Logo ${index + 1}`} loading="lazy" />
               </div>
             ))}
           </div>
