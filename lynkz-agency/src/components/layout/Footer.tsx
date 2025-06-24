@@ -56,15 +56,11 @@ const contactInfo = [
     url: 'mailto:lynkzagency@gmail.com'
   },
 
+
+
+
   {
     icon: <FiPhone aria-hidden="true" />,
-    text: '+1 (555) 123-4567',
-    url: 'tel:+15551234567'
-  },
-
-
-  { 
-    icon: <FiPhone aria-hidden="true" />, 
     text: '+91 9497684728',
     url: 'tel:+91 9497684728'
   },
@@ -73,11 +69,18 @@ const contactInfo = [
   //   text: '123 Creative St, Tech City',
   //   url: 'https://maps.google.com?q=123+Creative+St+Tech+City+CA+94103+USA'
   // },
-  { 
-    icon: <FiClock aria-hidden="true" />, 
+  {
+    icon: <FiClock aria-hidden="true" />,
     text: 'Mon - Fri: 9:00 - 18:00',
-    text2: 'Sat - Sun: Closed'
+    text2: 'Sat: 10:00 - 15:00'
   },
+
+  //   { 
+  //   icon: <FiClock aria-hidden="true" />, 
+  //   text: 'Mon - Fri: 9:00 - 18:00',
+  //   text2: 'Sat - Sun: Closed'
+  // },
+
 
 ];
 
@@ -194,9 +197,15 @@ const Footer: React.FC = () => {
                           {item.text}
                         </a>
                       ) : (
-                        <span>{item.text}</span>
+                        <div className={styles.contactTextColumn}>
+                          <span>{item.text}</span>
+                        
+                          <span>{item.text2}</span>
+                          
+                        </div>
                       )}
                     </div>
+
                   </li>
                 ))}
               </ul>
