@@ -89,9 +89,9 @@ const Home = () => {
                 Explore Services
               </Link>
               <a
-                href="/Lynkz_Brochure.pdf"
+                href="/Lynkz Profile.pdf"
                 target="_blank"
-                download={'/Pixalytica Profile.pdf'}
+                download={'Lynkz Profile.pdf'}
                 rel="noopener noreferrer"
                 className={styles.secondaryButton}
               >
