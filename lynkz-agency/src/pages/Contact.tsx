@@ -73,7 +73,7 @@ const Contact: React.FC = () => {
       icon: <FiPhone className={styles.icon} />,
       title: 'Call Us',
       description: '+91 9497684728',
-      description2: 'Mon - Fri, 9:00 - 18:00',
+      // description2: 'Mon - Fri, 9:00 - 18:00',
       link: 'tel:+91 9497684728',
     },
     {

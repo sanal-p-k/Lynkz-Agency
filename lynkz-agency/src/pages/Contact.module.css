@@ -244,7 +244,7 @@
 @media (max-width: 768px) {
   .contactInfoGrid {
     grid-template-columns: 1fr;
-    max-width: 500px;
+    /* max-width: 100%; */
     gap: 1.25rem;
   }
 
@@ -559,6 +559,15 @@ textarea.formControl {
   }
 }
 
+@media (max-width: 640px) {
+  .contactInfoGrid {
+    grid-template-columns: 1fr;
+  }
+  .contactDescription{
+    margin-left: 2rem;
+  }
+}
+
 @media (max-width: 480px) {
   .hero {
     padding: 6rem 0 3rem;
@@ -568,9 +577,7 @@ textarea.formControl {
     font-size: 2rem;
   }
 
-  .contactInfoGrid {
-    grid-template-columns: 1fr;
-  }
+
 
   .contactFormContainer {
     padding: 1.5rem;
