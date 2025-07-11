@@ -227,7 +227,7 @@ const About = () => {
           >
             <h2 className={styles.ctaTitle}>Let's Build Something Great Together</h2>
             <p className={styles.ctaSubtitle}>Whether you have an idea, a project, or just want to connect — we'd love to hear from you.</p>
-            <a href="#contact" className={styles.ctaButton} data-cursor-hover>
+            <a href="contact" className={styles.ctaButton} data-cursor-hover>
               Connect With Us
               <span className={styles.ctaButtonIcon}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

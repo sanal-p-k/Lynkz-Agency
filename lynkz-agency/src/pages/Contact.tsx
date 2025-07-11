@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { 
-  FiPhone, 
-  FiMail, 
-  FiClock, 
-  FiCheck, 
-  FiX, 
+import {
+  FiPhone,
+  FiMail,
+  FiClock,
+  FiCheck,
+  FiX,
   FiSend,
   FiArrowRight
 } from 'react-icons/fi';
@@ -16,7 +16,7 @@ import styles from './Contact.module.css';
 interface FormData {
   name: string;
   email: string;
-  subject: string;
+  title: string;
   message: string;
 }
 
@@ -45,16 +45,16 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
-    subject: '',
+    title: '',
     message: ''
   });
-  
-  const [status, setStatus] = useState<FormStatus>({ 
-    submitting: false, 
-    success: null, 
-    message: '' 
+
+  const [status, setStatus] = useState<FormStatus>({
+    submitting: false,
+    success: null,
+    message: ''
   });
-  
+
   // Refs for scroll animations
   const heroRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLDivElement>(null);
@@ -87,25 +87,25 @@ const Contact: React.FC = () => {
   // Social media links
   const socialLinks: SocialLink[] = [
     {
-    name: 'Instagram',
-    url: 'https://www.instagram.com/lynkz_agency/',
-    icon: <i className="fa-brands  fa-instagram"></i>,
-  },
-  {
-    name: 'X (Twitter)',
-    url: 'https://x.com/LynkzAgency',
-    icon: <i className="fa-brands  fa-x-twitter"></i>,
-  },
-  {
-    name: 'LinkedIn',
-    url: 'https://www.linkedin.com/company/lynkz-agency/',
-    icon: <i className="fa-brands fa-linkedin-in "></i>,
-  },
-  {
-    name: 'Facebook',
-    url: 'https://www.facebook.com/profile.php?id=61575929790796',
-    icon: <i className="fa-brands  fa-facebook-f"></i>,
-  },
+      name: 'Instagram',
+      url: 'https://www.instagram.com/lynkz_agency/',
+      icon: <i className="fa-brands  fa-instagram"></i>,
+    },
+    {
+      name: 'X (Twitter)',
+      url: 'https://x.com/LynkzAgency',
+      icon: <i className="fa-brands  fa-x-twitter"></i>,
+    },
+    {
+      name: 'LinkedIn',
+      url: 'https://www.linkedin.com/company/lynkz-agency/',
+      icon: <i className="fa-brands fa-linkedin-in "></i>,
+    },
+    {
+      name: 'Facebook',
+      url: 'https://www.facebook.com/profile.php?id=61575929790796',
+      icon: <i className="fa-brands  fa-facebook-f"></i>,
+    },
   ];
 
   // Handle form input changes
@@ -117,42 +117,48 @@ const Contact: React.FC = () => {
     }));
   };
 
+  const SERVICE_ID = 'service_gjw359c';
+  const TEMPLATE_ID = 'template_sehffbo';
+  const PUBLIC_KEY = 'BXi3dP19tC-LnbYDe';
+
+
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     setStatus({
       submitting: true,
       success: null,
       message: ''
     });
-    
+
     try {
       // Replace with your EmailJS service ID, template ID, and user ID
       const result = await emailjs.sendForm(
-        'your_service_id',
-        'your_template_id',
+        SERVICE_ID,
+        TEMPLATE_ID,
         form.current!,
-        'your_user_id'
+        PUBLIC_KEY
       );
-      
+
+
       console.log('Email sent successfully:', result);
-      
+
       // Update status on success
       setStatus({
         submitting: false,
         success: true,
         message: 'Your message has been sent successfully! We\'ll get back to you soon.'
       });
-      
+
       // Reset form
       setFormData({
         name: '',
         email: '',
-        subject: '',
+        title: '',
         message: ''
       });
-      
+
     } catch (error) {
       console.error('Error sending email:', error);
       setStatus({
@@ -179,7 +185,7 @@ const Contact: React.FC = () => {
       <section className={styles.hero} ref={heroRef}>
         <div className="container">
           <div className={styles.heroContent}>
-            <motion.h1 
+            <motion.h1
               className={styles.heroTitle}
               initial={{ opacity: 0, y: 20 }}
               animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
@@ -187,13 +193,13 @@ const Contact: React.FC = () => {
             >
               Let's Work Together
             </motion.h1>
-            <motion.p 
+            <motion.p
               className={styles.heroSubtitle}
               initial={{ opacity: 0, y: 20 }}
               animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              Have a project in mind or want to discuss potential opportunities? 
+              Have a project in mind or want to discuss potential opportunities?
               We'd love to hear from you. Let's create something amazing together.
             </motion.p>
             <motion.div
@@ -219,10 +225,10 @@ const Contact: React.FC = () => {
               We're here to help and answer any questions you might have.
             </p>
           </div>
-          
+
           <div className={styles.contactInfoGrid}>
             {contactInfo.map((item, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 className={styles.contactInfoCard}
                 initial={{ opacity: 0, y: 30 }}
@@ -237,9 +243,9 @@ const Contact: React.FC = () => {
                 <h3 className={styles.contactTitle}>{item.title}</h3>
                 <p className={styles.contactDescription}>
                   {item.link ? (
-                    <a 
-                      href={item.link} 
-                      target="_blank" 
+                    <a
+                      href={item.link}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className={styles.contactLink}
                     >
@@ -255,7 +261,7 @@ const Contact: React.FC = () => {
               </motion.div>
             ))}
           </div>
-          
+
           {/* Social Links */}
           <div className={styles.socialLinks}>
             {socialLinks.map((social, index) => (
@@ -290,10 +296,10 @@ const Contact: React.FC = () => {
               Have questions or ready to start your project? We're here to help.
             </p>
           </div>
-          
+
           <div className={styles.contactLayout}>
             {/* Contact Form */}
-            <motion.div 
+            <motion.div
               ref={formRef}
               className={styles.contactFormContainer}
               initial={{ opacity: 0, y: 30 }}
@@ -303,7 +309,7 @@ const Contact: React.FC = () => {
               <form ref={form} onSubmit={handleSubmit} className={styles.contactForm}>
                 <AnimatePresence mode="wait">
                   {status.message && (
-                    <motion.div 
+                    <motion.div
                       className={`${styles.formMessage} ${status.success ? styles.success : styles.error}`}
                       initial={{ opacity: 0, height: 0, marginBottom: 0, overflow: 'hidden' }}
                       animate={{ opacity: 1, height: 'auto', marginBottom: '2rem' }}
@@ -330,11 +336,11 @@ const Contact: React.FC = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     className={styles.formControl}
-                    placeholder=" "
+                    placeholder=" Your Name "
                     required
                   />
                   <label htmlFor="name" className={styles.formLabel}>
-                    Your Name
+
                   </label>
                 </div>
 
@@ -346,27 +352,27 @@ const Contact: React.FC = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     className={styles.formControl}
-                    placeholder=" "
+                    placeholder="Email Address "
                     required
                   />
                   <label htmlFor="email" className={styles.formLabel}>
-                    Email Address
+
                   </label>
                 </div>
 
                 <div className={styles.formGroup}>
                   <input
                     type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
+                    id="title"
+                    name="title"
+                    value={formData.title}
                     onChange={handleInputChange}
                     className={styles.formControl}
-                    placeholder=" "
+                    placeholder="Subject "
                     required
                   />
-                  <label htmlFor="subject" className={styles.formLabel}>
-                    Subject
+                  <label htmlFor="title" className={styles.formLabel}>
+
                   </label>
                 </div>
 
@@ -377,12 +383,12 @@ const Contact: React.FC = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     className={styles.formControl}
-                    placeholder=" "
+                    placeholder="Your Message "
                     rows={5}
                     required
                   />
                   <label htmlFor="message" className={styles.formLabel}>
-                    Your Message
+
                   </label>
                 </div>
 

@@ -42,7 +42,7 @@ const testimonials = [
     name: 'Hike HR Solutions',
     role: '',
     content: 'Lynkz Agency has been a game-changer for our brand. They delivered beyond our expectations.',
-    avatar: '',
+    avatar: '/Clients/hikehr.png',
   },
 ];
 
