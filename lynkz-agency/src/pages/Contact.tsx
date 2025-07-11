@@ -142,7 +142,7 @@ const Contact: React.FC = () => {
       );
 
 
-      console.log('Email sent successfully:', result);
+      // console.log('Email sent successfully:', result);
 
       // Update status on success
       setStatus({
